@@ -51,6 +51,7 @@ const Navbar = () => {
 
     const navLinks = <>
         <li className=" py-2"><NavLink to='/'>Home</NavLink></li>
+        <li className=" py-2"><NavLink to='/about'>About US</NavLink></li>
         {user && <>
             <li className=" py-2"><NavLink to='/addJob'>Add job</NavLink></li>
             <li className=" py-2"><NavLink to='/postedJob'>My posted jobs</NavLink></li>
