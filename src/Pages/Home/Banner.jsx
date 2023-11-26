@@ -13,7 +13,7 @@ const Banner = () => {
                             <span className='md:text-6xl linear-style2'>of survey creation.</span>
                         </h2>
                         <p className="text-sm px-16 md:px-0 md:text-lg font-medium text-white text-center">Create your survey in minutes. Reach your audience on every <br /> device. View results graphically and in real-time.</p>
-                        <div className="btn-epic " style={{height:'50px',}}>
+                        <div className="btn-epic shadow-md shadow-sky-300 " style={{height:'50px',}}>
                             <div>
                                 <span>Explore More</span><span>Explore More</span>
                             </div>

@@ -117,7 +117,7 @@ const Navbar = () => {
                             </div>
                             :
                             <>
-                                <div className="btn-epic">
+                                <div className="btn-epic shadow-md shadow-sky-300">
                                     <div>
                                         <span>Log in</span><span>Log in</span>
                                     </div>
