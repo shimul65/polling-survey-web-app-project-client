@@ -3,11 +3,51 @@ import logo from '../../../assets/survey.svg'
 import profile from '../../../assets/profile.png'
 // import { useState } from "react";
 import './Navbar.css'
+import { useEffect, useState } from "react";
 
 const Navbar = () => {
 
+    const [scrolling, setScrolling] = useState(false);
+
 
     const user = false;
+
+    // useEffect(() => {
+    //     const handleScroll = () => {
+    //         const navbar2 = document.querySelector('.navbar2');
+
+    //         const customClass = 'bg-gradient-to-b from-sky-300 to-blue-100'
+
+    //         if (window.scrollY > 100) {
+    //             navbar2?.classList.add(customClass);
+    //         } else {
+    //             navbar2?.classList.remove(customClass);
+    //         }
+    //     };
+
+    //     window.addEventListener('scroll', handleScroll);
+
+    //     return () => {
+    //         window.removeEventListener('scroll', handleScroll);
+    //     };
+    // }, []);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const navbar2 = document.querySelector('.navbar2');
+            // const customClass = 'bg-gradient-to-b from-sky-300 to-blue-100';
+
+            if (navbar2) {
+                setScrolling(window.scrollY > 100);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
 
     const navLinks = <>
         <li className=" py-2"><NavLink to='/'>Home</NavLink></li>
@@ -26,11 +66,11 @@ const Navbar = () => {
 
     </>
 
+    // bg-gradient-to-b from-sky-300 to-blue-100
+
     return (
-        <div className="sticky -top-4 z-50 bg-gradient-to-b from-sky-300 to-blue-100" >
-            <div className="ml-14 absolute top-0">
-            </div>
-            <div className="navbar container mx-auto font-semibold pt-6 pb-3">
+        <div className={`fixed navbar2 z-10 w-full p-3 ${scrolling ? 'bg-gradient-to-b from-sky-300 to-blue-100' : ''}`}>
+            <div className="navbar container mx-auto font-semibold">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -42,8 +82,7 @@ const Navbar = () => {
                     </div>
                     <Link to='/' ><img className='w-[150px]' src={logo} alt="" /></Link>
                 </div>
-                <div data-aos="fade-down" data-aos-duration='700'
-                    data-aos-offset="0" className="navbar-center hidden lg:flex">
+                <div className={`navbar-center hidden lg:flex ${scrolling ? 'text-black' : 'text-white'} `}>
                     <ul className="flex justify-center items-center gap-6 px-1">
                         {navLinks}
                     </ul>

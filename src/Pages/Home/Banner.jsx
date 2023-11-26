@@ -3,7 +3,7 @@ const Banner = () => {
     return (
         <div className="carousel w-full relative">
             {/* banner slider 1*/}
-            <div id="slide1" className="carousel-item border border-black-700 hero relative w-full md:h-[600px]"
+            <div id="slide1" className="carousel-item border border-black-700 hero relative w-full md:h-[700px]"
                 style={{ backgroundImage: `url(${banner})`, backgroundSize: '100% 100%' }}>
                 <div className="hero-overlay bg-opacity-60"></div>
                 <div className="">
@@ -13,7 +13,7 @@ const Banner = () => {
                             <span className='md:text-6xl linear-style2'>of survey creation.</span>
                         </h2>
                         <p className="text-sm px-16 md:px-0 md:text-lg font-medium text-white text-center">Create your survey in minutes. Reach your audience on every <br /> device. View results graphically and in real-time.</p>
-                        <div className="btn-epic " style={{height:'50px', fontSize: '18px', fontWeight: 'bold'}}>
+                        <div className="btn-epic " style={{height:'50px',}}>
                             <div>
                                 <span>Explore More</span><span>Explore More</span>
                             </div>
