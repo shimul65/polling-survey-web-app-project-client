@@ -1,8 +1,7 @@
 import banner from '../../assets/survey-home-screen.png'
 const Banner = () => {
     return (
-        <div className="carousel w-full relative">
-            {/* banner slider 1*/}
+        <div className="w-full relative">
             <div id="slide1" className="carousel-item border border-black-700 hero relative w-full md:h-[700px]"
                 style={{ backgroundImage: `url(${banner})`, backgroundSize: '100% 100%' }}>
                 <div className="hero-overlay bg-opacity-60"></div>

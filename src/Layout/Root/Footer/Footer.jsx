@@ -4,6 +4,7 @@ import twit from '../../../assets/twit.svg'
 import link from '../../../assets/link.svg'
 import instagram from '../../../assets/instagram.svg'
 import './Footer.css'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
     return (
@@ -30,7 +31,7 @@ const Footer = () => {
                 </nav>
                 <nav>
                     <header className="footer-title">Resources</header>
-                    <a className="link link-hover text-black">About us</a>
+                    <Link className="link link-hover text-black" to='/about'>About us</Link>
                     <a className="link link-hover text-black">User Guide</a>
                     <a className="link link-hover text-black">User forums</a>
                     <a className="link link-hover text-black">FAQs</a>
@@ -39,10 +40,10 @@ const Footer = () => {
                 </nav>
                 <nav>
                     <header className="footer-title">Quick links</header>
+                    <Link className="link link-hover text-black" to='/contact'>Contact Us</Link>
                     <a className="link link-hover text-black">Terms of use</a>
                     <a className="link link-hover text-black">Privacy policy</a>
                     <a className="link link-hover text-black">Features</a>
-                    <a className="link link-hover text-black">Resources</a>
                 </nav>
             </div>
             <div className="footer footer-center p-5 border-t-[3px] footer2 container mx-auto" >
