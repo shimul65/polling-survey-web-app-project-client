@@ -81,7 +81,7 @@ ul a.active {
 
 .btn-epic:hover {
     background: #3ad2d0;
-    transition:  0.2s linear;
+    transition: 0.2s linear;
     transition-delay: 0.6s;
 }
 
@@ -103,4 +103,21 @@ ul a.active {
 
 .btn-epic:hover span:last-child {
     transform: translateY(-24px);
+}
+
+/* banner style */
+.linear-style {
+    /* background: linear-gradient(180deg, #F948B2 0%, #8758F1 100%); */
+    background: linear-gradient(to bottom, #6DD7FF, #EBF4FF);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.linear-style2 {
+    /* background: linear-gradient(180deg, #F948B2 0%, #8758F1 100%); */
+    background: linear-gradient(360deg, #6DD7FF, #EBF4FF);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }

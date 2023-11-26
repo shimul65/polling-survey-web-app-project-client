@@ -80,7 +80,7 @@ const Navbar = () => {
                             <>
                                 <div className="btn-epic">
                                     <div>
-                                        <span>Get Ticket</span><span>Get Ticket</span>
+                                        <span>Log in</span><span>Log in</span>
                                     </div>
                                 </div>
                             </>
