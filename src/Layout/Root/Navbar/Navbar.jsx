@@ -27,7 +27,7 @@ const Navbar = () => {
     </>
 
     return (
-        <div className="sticky -top-4 z-50" >
+        <div className="sticky -top-4 z-50 bg-gradient-to-b from-sky-300 to-blue-100" >
             <div className="ml-14 absolute top-0">
             </div>
             <div className="navbar container mx-auto font-semibold pt-6 pb-3">
