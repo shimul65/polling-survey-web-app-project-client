@@ -5,7 +5,7 @@ import { IoIosArrowUp } from "react-icons/io";
 
 const Faq = () => {
     return (
-        <div>
+        <div className="mb-16">
             <SectionTitle heading={'Frequently Asked Questions'}></SectionTitle>
 
             <div className="container mx-auto">
@@ -14,10 +14,10 @@ const Faq = () => {
                         <Disclosure className="w-full">
                             {({ open }) => (
                                 <>
-                                    <Disclosure.Button className="flex w-full justify-between rounded-lg px-4 py-3 text-left text-sm font-medium text-blue-800 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75" style={{background: 'linear-gradient(360deg, #6DD7FF, #EBF4FF)'}}>
-                                        <span className="text-3xl font-semibold">What is your refund policy?</span>
+                                    <Disclosure.Button className="flex w-full justify-between rounded-lg px-4 py-3 text-left text-sm font-medium text-blue-800 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75" style={{ background: 'linear-gradient(360deg, #8cdcf9, #EBF4FF)' }}>
+                                        <span className="text-3xl font-semibold">1. How do I create a new survey?</span>
                                         <IoIosArrowUp className={`${open ? 'rotate-180 transform text-3xl font-semibold' : ''
-                                            }  text-purple-500 text-3xl font-semibold`}></IoIosArrowUp>
+                                            }  text-blue-800 text-3xl font-semibold`}></IoIosArrowUp>
                                     </Disclosure.Button>
                                     <Transition
                                         show={open}
@@ -29,8 +29,7 @@ const Faq = () => {
                                         leaveTo="transform scale-95 opacity-0"
                                     >
                                         <Disclosure.Panel className="text-lg text-gray-500 ml-5">
-                                            If you&#39;re unhappy with your purchase for any reason, email us
-                                            within 90 days and we&#39;ll refund you in full, no questions asked.
+                                            To create a new survey, log in to your account and navigate to the dashboard. Click on the &#34;Create Survey&#34; button, and you&#34;ll be guided through the process of adding questions, setting up logic, and customizing the survey to your needs.
                                         </Disclosure.Panel>
                                     </Transition>
                                 </>
@@ -39,10 +38,10 @@ const Faq = () => {
                         <Disclosure className="w-full">
                             {({ open }) => (
                                 <>
-                                    <Disclosure.Button className="flex w-full justify-between rounded-lg bg-purple-100 px-4 py-2 text-left text-sm font-medium text-purple-900 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75">
-                                        <span>What is your refund policy?</span>
-                                        <IoIosArrowUp className={`${open ? 'rotate-180 transform' : ''
-                                            } h-5 w-5 text-purple-500`}></IoIosArrowUp>
+                                    <Disclosure.Button className="flex w-full justify-between rounded-lg px-4 py-3 text-left text-sm font-medium text-blue-800 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75" style={{ background: 'linear-gradient(360deg, #8cdcf9, #EBF4FF)' }}>
+                                        <span className="text-3xl font-semibold">2. What question types are available?</span>
+                                        <IoIosArrowUp className={`${open ? 'rotate-180 transform text-3xl font-semibold' : ''
+                                            }  text-blue-800 text-3xl font-semibold`}></IoIosArrowUp>
                                     </Disclosure.Button>
                                     <Transition
                                         show={open}
@@ -53,9 +52,8 @@ const Faq = () => {
                                         leaveFrom="transform scale-100 opacity-100"
                                         leaveTo="transform scale-95 opacity-0"
                                     >
-                                        <Disclosure.Panel className="px-4 pb-2 pt-4 text-sm text-gray-500">
-                                            If you&#39;re unhappy with your purchase for any reason, email us
-                                            within 90 days and we&#39;ll refund you in full, no questions asked.
+                                        <Disclosure.Panel className="text-lg text-gray-500 ml-5">
+                                            We offer a diverse range of question types, including multiple-choice, open-ended, rating scales, and more. This variety allows you to design surveys that suit your specific data collection needs.
                                         </Disclosure.Panel>
                                     </Transition>
                                 </>
@@ -64,10 +62,10 @@ const Faq = () => {
                         <Disclosure className="w-full">
                             {({ open }) => (
                                 <>
-                                    <Disclosure.Button className="flex w-full justify-between rounded-lg bg-purple-100 px-4 py-2 text-left text-sm font-medium text-purple-900 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75">
-                                        <span>What is your refund policy?</span>
-                                        <IoIosArrowUp className={`${open ? 'rotate-180 transform' : ''
-                                            } h-5 w-5 text-purple-500`}></IoIosArrowUp>
+                                    <Disclosure.Button className="flex w-full justify-between rounded-lg px-4 py-3 text-left text-sm font-medium text-blue-800 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75" style={{ background: 'linear-gradient(360deg, #8cdcf9, #EBF4FF)' }}>
+                                        <span className="text-3xl font-semibold">3. Can I share surveys on social media?</span>
+                                        <IoIosArrowUp className={`${open ? 'rotate-180 transform text-3xl font-semibold' : ''
+                                            }  text-blue-800 text-3xl font-semibold`}></IoIosArrowUp>
                                     </Disclosure.Button>
                                     <Transition
                                         show={open}
@@ -78,21 +76,21 @@ const Faq = () => {
                                         leaveFrom="transform scale-100 opacity-100"
                                         leaveTo="transform scale-95 opacity-0"
                                     >
-                                        <Disclosure.Panel className="px-4 pb-2 pt-4 text-sm text-gray-500">
-                                            If you&#39;re unhappy with your purchase for any reason, email us
-                                            within 90 days and we&#39;ll refund you in full, no questions asked.
+                                        <Disclosure.Panel className="text-lg text-gray-500 ml-5">
+                                            Yes, our platform makes it easy to share surveys on various social media platforms. You can also distribute surveys via email campaigns, providing a seamless way to reach your audience.
                                         </Disclosure.Panel>
                                     </Transition>
                                 </>
                             )}
                         </Disclosure>
+
                         <Disclosure className="w-full">
                             {({ open }) => (
                                 <>
-                                    <Disclosure.Button className="flex w-full justify-between rounded-lg bg-purple-100 px-4 py-2 text-left text-sm font-medium text-purple-900 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75">
-                                        <span>What is your refund policy?</span>
-                                        <IoIosArrowUp className={`${open ? 'rotate-180 transform' : ''
-                                            } h-5 w-5 text-purple-500`}></IoIosArrowUp>
+                                    <Disclosure.Button className="flex w-full justify-between rounded-lg px-4 py-3 text-left text-sm font-medium text-blue-800 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75" style={{ background: 'linear-gradient(360deg, #8cdcf9, #EBF4FF)' }}>
+                                        <span className="text-3xl font-semibold">5. Are there analytics to track survey responses?</span>
+                                        <IoIosArrowUp className={`${open ? 'rotate-180 transform text-3xl font-semibold' : ''
+                                            }  text-blue-800 text-3xl font-semibold`}></IoIosArrowUp>
                                     </Disclosure.Button>
                                     <Transition
                                         show={open}
@@ -103,9 +101,8 @@ const Faq = () => {
                                         leaveFrom="transform scale-100 opacity-100"
                                         leaveTo="transform scale-95 opacity-0"
                                     >
-                                        <Disclosure.Panel className="px-4 pb-2 pt-4 text-sm text-gray-500">
-                                            If you&#39;re unhappy with your purchase for any reason, email us
-                                            within 90 days and we&#39;ll refund you in full, no questions asked.
+                                        <Disclosure.Panel className="text-lg text-gray-500 ml-5">
+                                            Yes, our web app provides robust analytics tools. You can track responses in real-time, view graphical representations of data, and export reports for further analysis.
                                         </Disclosure.Panel>
                                     </Transition>
                                 </>
@@ -114,10 +111,10 @@ const Faq = () => {
                         <Disclosure className="w-full">
                             {({ open }) => (
                                 <>
-                                    <Disclosure.Button className="flex w-full justify-between rounded-lg bg-purple-100 px-4 py-2 text-left text-sm font-medium text-purple-900 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75">
-                                        <span>What is your refund policy?</span>
-                                        <IoIosArrowUp className={`${open ? 'rotate-180 transform' : ''
-                                            } h-5 w-5 text-purple-500`}></IoIosArrowUp>
+                                    <Disclosure.Button className="flex w-full justify-between rounded-lg px-4 py-3 text-left text-sm font-medium text-blue-800 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75" style={{ background: 'linear-gradient(360deg, #8cdcf9, #EBF4FF)' }}>
+                                        <span className="text-3xl font-semibold">4. Can I collaborate with others on survey creation?</span>
+                                        <IoIosArrowUp className={`${open ? 'rotate-180 transform text-3xl font-semibold' : ''
+                                            }  text-blue-800 text-3xl font-semibold`}></IoIosArrowUp>
                                     </Disclosure.Button>
                                     <Transition
                                         show={open}
@@ -128,34 +125,8 @@ const Faq = () => {
                                         leaveFrom="transform scale-100 opacity-100"
                                         leaveTo="transform scale-95 opacity-0"
                                     >
-                                        <Disclosure.Panel className="px-4 pb-2 pt-4 text-sm text-gray-500">
-                                            If you&#39;re unhappy with your purchase for any reason, email us
-                                            within 90 days and we&#39;ll refund you in full, no questions asked.
-                                        </Disclosure.Panel>
-                                    </Transition>
-                                </>
-                            )}
-                        </Disclosure>
-                        <Disclosure className="w-full">
-                            {({ open }) => (
-                                <>
-                                    <Disclosure.Button className="flex w-full justify-between rounded-lg bg-purple-100 px-4 py-2 text-left text-sm font-medium text-purple-900 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75">
-                                        <span>What is your refund policy?</span>
-                                        <IoIosArrowUp className={`${open ? 'rotate-180 transform' : ''
-                                            } h-5 w-5 text-purple-500`}></IoIosArrowUp>
-                                    </Disclosure.Button>
-                                    <Transition
-                                        show={open}
-                                        enter="transition duration-500 ease-out"
-                                        enterFrom="transform scale-95 opacity-0"
-                                        enterTo="transform scale-100 opacity-100"
-                                        leave="transition duration-400 ease-out"
-                                        leaveFrom="transform scale-100 opacity-100"
-                                        leaveTo="transform scale-95 opacity-0"
-                                    >
-                                        <Disclosure.Panel className="px-4 pb-2 pt-4 text-sm text-gray-500">
-                                            If you&#39;re unhappy with your purchase for any reason, email us
-                                            within 90 days and we&#39;ll refund you in full, no questions asked.
+                                        <Disclosure.Panel className="text-lg text-gray-500 ml-5">
+                                            Yes, our platform supports collaboration. You can invite team members to collaborate on survey creation, making it a collaborative and efficient process.
                                         </Disclosure.Panel>
                                     </Transition>
                                 </>
