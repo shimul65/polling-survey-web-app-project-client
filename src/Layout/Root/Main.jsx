@@ -2,6 +2,7 @@ import { Toaster } from "react-hot-toast";
 import Navbar from "./Navbar/Navbar";
 import { Outlet, useLocation } from "react-router-dom";
 import Footer from "./Footer/Footer";
+import ScrollToTop from "../../Components/ScrollToTop/ScrollToTop";
 
 const Main = () => {
     const location = useLocation();
@@ -18,6 +19,7 @@ const Main = () => {
                     <Footer></Footer>
                 </div>
             }
+            <ScrollToTop></ScrollToTop>
             <Toaster></Toaster>
         </div>
     );

@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import toast from "react-hot-toast";
 import Swal from "sweetalert2";
+import SocialLogin from '../Login/SocialLogin';
 
 
 const Register = () => {
@@ -89,12 +90,8 @@ const Register = () => {
                 handleUpdateProfile(name, photoURL)
                     .then(() => {
                         navigate(location?.state ? location.state : '/');
-                        // setTimeout(() => {
-
-                        // }, 1000);
 
                         Swal.fire({
-                            // position: "top-end",
                             icon: "success",
                             title:
                                 `Registration Successful 
@@ -117,10 +114,6 @@ const Register = () => {
                             showConfirmButton: false,
                             timer: 2500
                         });
-
-                        // setTimeout(() => {
-                        //     window.location.reload();
-                        // }, 2500);
                     }).catch((error) => {
                         console.log(error);
                     });
@@ -193,7 +186,7 @@ const Register = () => {
                 </form>
                 <div className="divider">continue with</div>
                 <div className="w-full">
-                    {/* <SocialLogin></SocialLogin> */}
+                    <SocialLogin></SocialLogin>
                 </div>
             </div>
         </>

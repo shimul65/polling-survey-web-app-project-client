@@ -7,6 +7,7 @@ import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-s
 import { useLocation, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import Swal from "sweetalert2";
+import SocialLogin from "./SocialLogin";
 // import Swal from "sweetalert2";
 
 const Login = () => {
@@ -16,6 +17,7 @@ const Login = () => {
     const captchaRef = useRef();
 
     const [disabled, setDisabled] = useState(true);
+
 
     useEffect(() => {
         loadCaptchaEnginge(6, 'silver');
@@ -54,20 +56,6 @@ const Login = () => {
                 // navigate after log in
                 navigate(location?.state ? location.state?.from : '/');
                 toast.success('User Log In Successfully');
-
-                // setTimeout(() => {
-                //     Swal.fire({
-                //         position: "top-end",
-                //         icon: "success",
-                //         title: "User Log In Successfully",
-                //         showConfirmButton: false,
-                //         timer: 1500
-                //     });
-                // }, 1000);
-
-                // setTimeout(() => {
-                //     window.location.reload();
-                // }, 2500);
             })
             .catch(error => {
                 const errorCode = error.code;
@@ -138,7 +126,7 @@ const Login = () => {
 
                 <div className="divider">continue with</div>
                 <div className="w-full">
-                    {/* <SocialLogin></SocialLogin> */}
+                    <SocialLogin></SocialLogin>
                 </div>
                 <p className="mt-8 text-center">Don’t Have An Account ? <span onClick={() => document.getElementById('my_modal_6').showModal()} className="text-blue-700 underline font-medium cursor-pointer">Register</span></p>
             </div>
