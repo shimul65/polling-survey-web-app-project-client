@@ -5,9 +5,10 @@ import { IoIosArrowUp } from "react-icons/io";
 
 const Faq = () => {
     return (
-        <div className="mb-16">
-            <SectionTitle heading={'Frequently Asked Questions'}></SectionTitle>
-
+        <div className="mb-16 mt-10">
+           <div className="mb-16">
+           <SectionTitle heading={'Frequently Asked Questions'}></SectionTitle>
+           </div>
             <div className="container mx-auto">
                 <div className="">
                     <div className="mx-auto w-[80%] gap-4 grid grid-cols-1 rounded-2xl ">

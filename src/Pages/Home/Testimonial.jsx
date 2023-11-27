@@ -43,7 +43,9 @@ const Testimonial = () => {
 
     return (
         <div>
+            <div className="my-16">
             <SectionTitle heading={'Testimonial'}></SectionTitle>
+            </div>
             <div className="container mx-auto">
                 <Slider className='py-10' {...settings}>
                     <div className="px-6 text-center">

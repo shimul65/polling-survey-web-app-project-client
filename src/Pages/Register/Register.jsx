@@ -1,10 +1,11 @@
-
+import 'animate.css';
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import toast from "react-hot-toast";
 import Swal from "sweetalert2";
+
 
 const Register = () => {
 
@@ -29,8 +30,8 @@ const Register = () => {
             Swal.fire({
                 position: "top-end",
                 icon: "error",
-                title:  
-                `Password should be at
+                title:
+                    `Password should be at
                  least 6 characters or longer`,
                 showConfirmButton: false,
                 timer: 2500
@@ -42,8 +43,8 @@ const Register = () => {
             Swal.fire({
                 position: "top-end",
                 icon: "error",
-                title:  
-                `Your Password should contain
+                title:
+                    `Your Password should contain
                  an uppercase letter`,
                 showConfirmButton: false,
                 timer: 2500
@@ -56,8 +57,8 @@ const Register = () => {
             Swal.fire({
                 position: "top-end",
                 icon: "error",
-                title:  
-                `Your Password should
+                title:
+                    `Your Password should
                  contain a special character`,
                 showConfirmButton: false,
                 timer: 2500
@@ -69,8 +70,8 @@ const Register = () => {
             Swal.fire({
                 position: "top-end",
                 icon: "error",
-                title:  
-                `Please accept our
+                title:
+                    `Please accept our
                  terms & conditions`,
                 showConfirmButton: false,
                 timer: 2500
@@ -88,21 +89,38 @@ const Register = () => {
                 handleUpdateProfile(name, photoURL)
                     .then(() => {
                         navigate(location?.state ? location.state : '/');
-                        setTimeout(() => {
-                            Swal.fire({
-                                position: "top-end",
-                                icon: "success",
-                                title:  
-                                `User Register Successfully 
-                                You can login now`,
-                                showConfirmButton: false,
-                                timer: 1500
-                            });
-                        }, 1000);
+                        // setTimeout(() => {
 
-                        setTimeout(() => {
-                            window.location.reload();
-                        }, 2500);
+                        // }, 1000);
+
+                        Swal.fire({
+                            // position: "top-end",
+                            icon: "success",
+                            title:
+                                `Registration Successful 
+                             Thanks 
+                            ❤️❤️❤️`,
+                            showClass: {
+                                popup: `
+                                  animate__animated
+                                  animate__fadeInUp
+                                  animate__faster
+                                `
+                            },
+                            hideClass: {
+                                popup: `
+                                  animate__animated
+                                  animate__fadeOutDown
+                                  animate__faster
+                                `
+                            },
+                            showConfirmButton: false,
+                            timer: 2500
+                        });
+
+                        // setTimeout(() => {
+                        //     window.location.reload();
+                        // }, 2500);
                     }).catch((error) => {
                         console.log(error);
                     });
@@ -117,7 +135,7 @@ const Register = () => {
     return (
         <>
             {/* register */}
-            <div className="card-body mx-auto my-16 rounded-2xl py-8 px-10 text-black">
+            <div className="card-body mx-auto rounded-2xl py-8 px-10 text-black">
                 <form onSubmit={handleRegister}>
                     <h2 className=' text-4xl font-extrabold text-[#05bcff] text-center' style={{
                         fontFamily: 'Inter'

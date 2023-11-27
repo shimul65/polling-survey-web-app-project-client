@@ -12,6 +12,7 @@ import brazil from "../../assets/contact/brazil.png";
 import { CiLocationOn, CiTimer } from "react-icons/ci";
 import { BsTelephone, BsCheckSquare } from "react-icons/bs";
 import Trusted from "../Home/Trusted";
+import 'animate.css';
 
 const Contact = () => {
     return (
@@ -86,10 +87,12 @@ const Contact = () => {
                 </div>
             </div>
             <div className="md:bg-[#0973bf] pb-16">
-                <SectionTitle heading={'General Inquiries'}></SectionTitle>
+                <div className="mb-8 pt-8">
+                    <SectionTitle heading={'General Inquiries'}></SectionTitle>
+                </div>
                 <div className="container mx-auto">
                     <div className="grid grid-cols-1 gap-6 md:grid-cols-4 mb-14 mx-2">
-                        <div className="flex bg-white py-10 border rounded-lg shadow-2xl flex-col items-center justify-center">
+                        <div className="flex bg-white py-10 border rounded-lg shadow-2xl flex-col items-center justify-center animate__animated animate__fadeInDown ">
                             <div className="text-5xl text-blue-600">
                                 <CiLocationOn></CiLocationOn>
                             </div>
@@ -101,7 +104,7 @@ const Contact = () => {
                                 85 Fentiman Ave <br />
                                 Ottawa, ON K1S 0T7</p>
                         </div>
-                        <div className="flex bg-white py-10 rounded-lg shadow-2xl border flex-col items-center justify-center">
+                        <div className="flex bg-white py-10 rounded-lg shadow-2xl border flex-col items-center justify-center animate__animated animate__delay-1s animate__fadeInDown">
                             <div className="text-5xl text-blue-600">
                                 <BsTelephone></BsTelephone>
                             </div>
@@ -112,7 +115,7 @@ const Contact = () => {
                                 Fax: 1-800-64-39 <br />
                                 office@fable.com</p>
                         </div>
-                        <div className="flex bg-white rounded-lg shadow-2xl py-10 border flex-col items-center justify-center">
+                        <div className="flex bg-white rounded-lg shadow-2xl py-10 border flex-col items-center justify-center animate__animated animate__delay-2s animate__fadeInDown">
                             <div className="text-5xl text-blue-600">
                                 <CiTimer></CiTimer>
                             </div>
@@ -123,7 +126,7 @@ const Contact = () => {
                                 8.00 am – 5.00 pm <br />
                                 Weekend Closed</p>
                         </div>
-                        <div className="flex bg-white px-1 rounded-lg shadow-2xl py-10 border flex-col items-center justify-center">
+                        <div className="flex bg-white px-1 rounded-lg shadow-2xl py-10 border flex-col items-center justify-center animate__animated animate__delay-3s animate__fadeInDown">
                             <div className="text-5xl text-blue-600">
                                 <BsCheckSquare></BsCheckSquare>
                             </div>
@@ -138,7 +141,9 @@ const Contact = () => {
                 </div>
             </div>
             <div className="pb-16">
-                <SectionTitle heading={'Our offices around the world'}></SectionTitle>
+                <div className="my-16">
+                    <SectionTitle heading={'Our offices around the world'}></SectionTitle>
+                </div>
                 <p className="text-center mb-10 text-lg">Connect with one of our global offices...  <br />
                     or feel free to just send us a nifty postcard. We won&#39;t mind!</p>
                 <div className="container mx-auto">

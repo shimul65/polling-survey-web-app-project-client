@@ -4,7 +4,9 @@ import SectionTitle from '../../Components/SectionTitle/SectionTitle';
 const HowWorks = () => {
     return (
         <div className="container mx-auto my-10 overflow-hidden">
+            <div className='mb-16'>
             <SectionTitle heading={'How it Works'}></SectionTitle>
+            </div>
             <div className="">
                 <div className='flex flex-col-reverse gap-5 md:gap-0  mx-3 md:mx-0 md:flex-row-reverse items-center'>
                     <div className="flex-1 space-y-10" >

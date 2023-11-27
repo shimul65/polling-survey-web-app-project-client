@@ -39,7 +39,9 @@ const About = () => {
                 </div>
             </div>
             <div className="container mx-auto mb-16">
+                <div className="my-16">
                 <SectionTitle heading={"ABOUT US"} ></SectionTitle>
+                </div>
                 <div>
                     <p className="text-4xl font-semibold text-justify mx-[14%]">Good software is a work of art, and good art takes time. Our teams spend years mastering their craft in order to deliver exceptional products that customers love. Software isn&#39;t just our paycheck:</p>
                 </div>

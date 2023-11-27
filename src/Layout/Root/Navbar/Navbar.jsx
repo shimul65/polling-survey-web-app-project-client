@@ -1,37 +1,42 @@
-import { Link, NavLink, } from "react-router-dom";
+import { Link, NavLink, useNavigate, } from "react-router-dom";
 import logo from '../../../assets/survey.svg'
 import profile from '../../../assets/profile.png'
 // import { useState } from "react";
 import './Navbar.css'
 import { useEffect, useState } from "react";
 import Login from "../../../Pages/Login/Login";
+import useAuth from "../../../Hooks/useAuth";
+import toast from "react-hot-toast";
+// import Swal from "sweetalert2";
+import auth from "../../../Firebase/firebase.config";
 
 const Navbar = () => {
 
     const [scrolling, setScrolling] = useState(false);
 
+    const navigate = useNavigate();
+    const { user, logOut } = useAuth();
 
-    const user = false;
+    const handleLogOut = () => {
 
-    // useEffect(() => {
-    //     const handleScroll = () => {
-    //         const navbar2 = document.querySelector('.navbar2');
-
-    //         const customClass = 'bg-gradient-to-b from-sky-300 to-blue-100'
-
-    //         if (window.scrollY > 100) {
-    //             navbar2?.classList.add(customClass);
-    //         } else {
-    //             navbar2?.classList.remove(customClass);
-    //         }
-    //     };
-
-    //     window.addEventListener('scroll', handleScroll);
-
-    //     return () => {
-    //         window.removeEventListener('scroll', handleScroll);
-    //     };
-    // }, []);
+        logOut(auth)
+            .then(() => {
+                navigate('/');
+                // Swal.fire({
+                //     position: "top-end",
+                //     icon: "success",
+                //     title: "User Log Out Successfully",
+                //     showConfirmButton: false,
+                //     timer: 1500
+                // });
+                toast.success('User Log Out Successfully')
+            })
+            .catch(error => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                toast.error(errorCode, errorMessage);
+            })
+    }
 
     useEffect(() => {
         const handleScroll = () => {
@@ -111,11 +116,13 @@ const Navbar = () => {
                                         <div className="text-lg">Email : <br />{user?.email}</div>
 
                                     </li>
-                                    <li>
-                                        <button
-                                            className="customBtn flex items-center justify-center h-10 rounded-full text-center py-0">LOG OUT</button>
-
-                                    </li>
+                                    <button onClick={handleLogOut}>
+                                        <div className="btn-epic mx-auto shadow-md shadow-sky-300" style={{ height: '50px', width: '60%' }}>
+                                            <div>
+                                                <span style={{ left: '0' }}>Log Out</span><span style={{ left: '0' }}>Log Out</span>
+                                            </div>
+                                        </div>
+                                    </button>
                                 </ul>
                             </div>
                             :

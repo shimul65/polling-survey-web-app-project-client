@@ -7,6 +7,7 @@ import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-s
 import { useLocation, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import Swal from "sweetalert2";
+// import Swal from "sweetalert2";
 
 const Login = () => {
 
@@ -52,26 +53,34 @@ const Login = () => {
                 console.log(loggedInUser);
                 // navigate after log in
                 navigate(location?.state ? location.state?.from : '/');
+                toast.success('User Log In Successfully');
 
-                setTimeout(() => {
-                    Swal.fire({
-                        position: "top-end",
-                        icon: "success",
-                        title: "User Log In Successfully",
-                        showConfirmButton: false,
-                        timer: 1500
-                    });
-                }, 1000);
+                // setTimeout(() => {
+                //     Swal.fire({
+                //         position: "top-end",
+                //         icon: "success",
+                //         title: "User Log In Successfully",
+                //         showConfirmButton: false,
+                //         timer: 1500
+                //     });
+                // }, 1000);
 
-                setTimeout(() => {
-                    window.location.reload();
-                }, 2500);
+                // setTimeout(() => {
+                //     window.location.reload();
+                // }, 2500);
             })
             .catch(error => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
-                toast.error(`${errorCode, errorMessage}
-                Please input correct email and password`);
+                console.log(errorCode,errorMessage);
+                Swal.fire({
+                    position: "top-end",
+                    icon: "error",
+                    title:  
+                    `Please give correct mail & Password`,
+                    showConfirmButton: false,
+                    timer: 2500
+                });
             })
 
     }
@@ -79,7 +88,7 @@ const Login = () => {
 
     return (
         <div>
-            <div className="card-body mx-auto my-16 rounded-2xl py-8 px-10 text-black">
+            <div className="card-body mx-auto my-6 rounded-2xl py-8 px-10 text-black">
                 <form onSubmit={handleLogin} method="dialog" >
                     <h2 className=' text-4xl font-extrabold text-[#05bcff] text-center' style={{
                         fontFamily: 'Inter'
