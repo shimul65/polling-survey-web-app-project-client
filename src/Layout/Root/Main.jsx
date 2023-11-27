@@ -1,16 +1,23 @@
 import { Toaster } from "react-hot-toast";
 import Navbar from "./Navbar/Navbar";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import Footer from "./Footer/Footer";
 
 const Main = () => {
+    const location = useLocation();
+    const isLogin = location.pathname.includes('login');
+    const isRegister = location.pathname.includes('register');
     return (
         <div className="">
-            <Navbar></Navbar>
+            {
+                isLogin || isRegister || <Navbar></Navbar>
+            }
             <Outlet></Outlet>
-            <div className="bg-gradient-to-b from-sky-300 to-blue-100 text-black">
-                <Footer></Footer>
-            </div>
+            {
+                isLogin || isRegister || <div className="bg-gradient-to-b from-sky-300 to-blue-100 text-black">
+                    <Footer></Footer>
+                </div>
+            }
             <Toaster></Toaster>
         </div>
     );

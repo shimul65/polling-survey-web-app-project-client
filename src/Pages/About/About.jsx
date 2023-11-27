@@ -48,15 +48,15 @@ const About = () => {
                         It&rsquo;s Our <span className=" text-4xl md:text-8xl text-[#05bcff] text-center">
                             <Typewriter
                                 cursor
-                                cursorStyle='!'
+                                cursorStyle='|'
                                 cursorBlinking
                                 delaySpeed={1000}
                                 deleteSpeed={25}
                                 loop={0}
                                 typeSpeed={75}
                                 words={[
-                                    'Cruft ',
-                                    'Passion '
+                                    'Cruft!',
+                                    'Passion!'
                                 ]}
                             />
                         </span>

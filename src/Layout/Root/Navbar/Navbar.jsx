@@ -4,6 +4,7 @@ import profile from '../../../assets/profile.png'
 // import { useState } from "react";
 import './Navbar.css'
 import { useEffect, useState } from "react";
+import Login from "../../../Pages/Login/Login";
 
 const Navbar = () => {
 
@@ -119,11 +120,22 @@ const Navbar = () => {
                             </div>
                             :
                             <>
-                                <div className="btn-epic shadow-md shadow-sky-300">
+                                <div className="btn-epic shadow-md shadow-sky-300" onClick={() => document.getElementById('my_modal_5').showModal()}>
                                     <div>
                                         <span>Log in</span><span>Log in</span>
                                     </div>
                                 </div>
+
+                                <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
+                                    <div className="relative shadow-2xl glass  px-20 card bg-[#EBF4F]">
+                                        <Login></Login>
+                                        <div className="modal-action">
+                                            <form method="dialog" className="">
+                                                <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </dialog>
                             </>
                     }
                 </div>

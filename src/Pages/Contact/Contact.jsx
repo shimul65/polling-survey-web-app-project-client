@@ -90,21 +90,22 @@ const Contact = () => {
                 <div className="container mx-auto">
                     <div className="grid grid-cols-1 gap-6 md:grid-cols-4 mb-14 mx-2">
                         <div className="flex bg-white py-10 border rounded-lg shadow-2xl flex-col items-center justify-center">
-                            <div className="text-5xl text-[#ff635c]">
+                            <div className="text-5xl text-blue-600">
                                 <CiLocationOn></CiLocationOn>
                             </div>
-                            <p className="mt-6 text-center text-xl font-semibold">
+                            <p className="mt-6 text-center text-xl font-semibold text-blue-600">
                                 Postal Address
                             </p>
-                            <p className="my-4 text-center text-[#a3a3a6]">Unica Event Agency <br />
+                            <p className="my-4 text-center text-[#a3a3a6]">
+                                New York, USA <br />
                                 85 Fentiman Ave <br />
                                 Ottawa, ON K1S 0T7</p>
                         </div>
                         <div className="flex bg-white py-10 rounded-lg shadow-2xl border flex-col items-center justify-center">
-                            <div className="text-5xl text-[#ff635c]">
+                            <div className="text-5xl text-blue-600">
                                 <BsTelephone></BsTelephone>
                             </div>
-                            <p className="mt-6 text-center text-xl font-semibold">
+                            <p className="mt-6 text-center text-xl font-semibold text-blue-600">
                                 Phone & E-mail
                             </p>
                             <p className="my-4 text-center text-[#a3a3a6]">Phone: 1-800-64-38 <br />
@@ -112,10 +113,10 @@ const Contact = () => {
                                 office@fable.com</p>
                         </div>
                         <div className="flex bg-white rounded-lg shadow-2xl py-10 border flex-col items-center justify-center">
-                            <div className="text-5xl text-[#ff635c]">
+                            <div className="text-5xl text-blue-600">
                                 <CiTimer></CiTimer>
                             </div>
-                            <p className="mt-6 text-center text-xl font-semibold">
+                            <p className="mt-6 text-center text-xl font-semibold text-blue-600">
                                 Open Hours
                             </p>
                             <p className="my-4 text-center text-[#a3a3a6]">Monday – Friday <br />
@@ -123,10 +124,10 @@ const Contact = () => {
                                 Weekend Closed</p>
                         </div>
                         <div className="flex bg-white px-1 rounded-lg shadow-2xl py-10 border flex-col items-center justify-center">
-                            <div className="text-5xl text-[#ff635c]">
+                            <div className="text-5xl text-blue-600">
                                 <BsCheckSquare></BsCheckSquare>
                             </div>
-                            <p className="mt-6 text-center text-xl font-semibold">
+                            <p className="mt-6 text-center text-xl font-semibold text-blue-600">
                                 Sessions
                             </p>
                             <p className="my-4 text-center text-[#a3a3a6]">Mornings, 8 am – 12 pm <br />
@@ -147,9 +148,10 @@ const Contact = () => {
                                 <div className="text-5xl mt-5 flex flex-row-reverse justify-around items-center">
                                     <img src={usa} className="w-14" alt="" />
                                     <p className=" text-center text-2xl font-semibold text-blue-600">
-                                        Postal Address
+                                        USA
                                     </p>
                                 </div>
+                                <div className="divider mx-9"></div>
                                 <p className="mt-6 text-left pl-[15%] text-[#a3a3a6]">
                                     <span className="text-xl font-bold text-gray-600">California</span> <br />
                                     4141 Hacienda Drive, <br />
@@ -174,6 +176,7 @@ const Contact = () => {
                                         Mexico
                                     </p>
                                 </div>
+                                <div className="divider mx-9"></div>
                                 <p className="mt-6 text-left pl-[15%] text-[#a3a3a6]">
                                     <span className="text-xl font-bold text-gray-600">Yokohama</span> <br /> <br />
                                     Minato-Mirai-Center building 13F, <br />
@@ -192,6 +195,7 @@ const Contact = () => {
                                         Singapore
                                     </p>
                                 </div>
+                                <div className="divider mx-9"></div>
                                 <p className="mt-6 text-left pl-[15%] text-[#a3a3a6]">
                                     <span className="text-xl font-bold text-gray-600">Singapore</span> <br /> <br />
                                     3F, KPHZ International Technology <br />
@@ -217,6 +221,7 @@ const Contact = () => {
                                         India
                                     </p>
                                 </div>
+                                <div className="divider mx-9"></div>
                                 <p className="mt-6 text-left pl-[15%] text-[#a3a3a6]">
                                     <span className="text-xl font-bold text-gray-600">Chennai</span> <br /> <br />
                                     Estancia IT Park, <br />
@@ -263,6 +268,7 @@ const Contact = () => {
                                         Japan
                                     </p>
                                 </div>
+                                <div className="divider mx-9"></div>
                                 <p className="mt-6 text-left pl-[15%] text-[#a3a3a6]">
                                     <span className="text-xl font-bold text-gray-600">Yokohama</span> <br /> <br />
                                     Minato-Mirai-Center building 13F, <br />

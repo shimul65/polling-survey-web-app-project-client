@@ -74,7 +74,7 @@ const Testimonial = () => {
                             </p>
                             <div className="rating rating-lg flex justify-start items-start">
                                 <input type="radio" name="rating-8" className="mask mask-star-2 bg-orange-400" />
-                                <input type="radio" name="rating-8" className="mask mask-star-2 bg-orange-400" checked />
+                                <input type="radio" name="rating-8" className="mask mask-star-2 bg-orange-400" />
                                 <input type="radio" name="rating-8" className="mask mask-star-2 bg-orange-400" />
                                 <input type="radio" name="rating-8" className="mask mask-star-2 bg-orange-400" />
                                 <input type="radio" name="rating-8" className="mask mask-star-2 bg-orange-400" />
@@ -109,7 +109,7 @@ const Testimonial = () => {
                             </p>
                             <div className="rating rating-lg flex justify-start items-start">
                                 <input type="radio" name="rating-8" className="mask mask-star-2 bg-orange-400" />
-                                <input type="radio" name="rating-8" className="mask mask-star-2 bg-orange-400" checked />
+                                <input type="radio" name="rating-8" className="mask mask-star-2 bg-orange-400" />
                                 <input type="radio" name="rating-8" className="mask mask-star-2 bg-orange-400" />
                                 <input type="radio" name="rating-8" className="mask mask-star-2 bg-orange-400" />
                                 <input type="radio" name="rating-8" className="mask mask-star-2 bg-orange-400" />
@@ -144,7 +144,7 @@ const Testimonial = () => {
                             </p>
                             <div className="rating rating-lg flex justify-start items-start">
                                 <input type="radio" name="rating-8" className="mask mask-star-2 bg-orange-400" />
-                                <input type="radio" name="rating-8" className="mask mask-star-2 bg-orange-400" checked />
+                                <input type="radio" name="rating-8" className="mask mask-star-2 bg-orange-400" />
                                 <input type="radio" name="rating-8" className="mask mask-star-2 bg-orange-400" />
                                 <input type="radio" name="rating-8" className="mask mask-star-2 bg-orange-400" />
                                 <input type="radio" name="rating-8" className="mask mask-star-2 bg-orange-400" />
@@ -179,7 +179,7 @@ const Testimonial = () => {
                             </p>
                             <div className="rating rating-lg flex justify-start items-start">
                                 <input type="radio" name="rating-8" className="mask mask-star-2 bg-orange-400" />
-                                <input type="radio" name="rating-8" className="mask mask-star-2 bg-orange-400" checked />
+                                <input type="radio" name="rating-8" className="mask mask-star-2 bg-orange-400" />
                                 <input type="radio" name="rating-8" className="mask mask-star-2 bg-orange-400" />
                                 <input type="radio" name="rating-8" className="mask mask-star-2 bg-orange-400" />
                                 <input type="radio" name="rating-8" className="mask mask-star-2 bg-orange-400" />
