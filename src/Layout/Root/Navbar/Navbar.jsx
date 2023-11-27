@@ -132,6 +132,7 @@ const Navbar = () => {
                                         <div className="modal-action">
                                             <form method="dialog" className="">
                                                 <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                                                {/* <button className="w-full border border-red-500 btn-sm btn-circle absolute right-0 bottom-[30%]"></button> */}
                                             </form>
                                         </div>
                                     </div>
