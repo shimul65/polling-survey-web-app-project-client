@@ -1,7 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import auth from "../Firebase/firebase.config";
-// import useAxiosPublic from "../Hooks/useAxiosPublic";
+import useAxiosPublic from "../Hooks/useAxiosPublic";
 
 
 export const AuthContext = createContext(null);
@@ -16,7 +16,7 @@ const AuthProvider = ({ children }) => {
 
     const [loading, setLoading] = useState(true);
 
-    // const axiosPublic = useAxiosPublic();
+    const axiosPublic = useAxiosPublic();
 
     // google login
     const googleLogin = () => {
@@ -53,30 +53,28 @@ const AuthProvider = ({ children }) => {
         const unSubscribe = onAuthStateChanged(auth, currentUser => {
             setUser(currentUser);
 
-            setLoading(false)
+            const loggedUser = { email: currentUser?.email || user?.email };
 
-            // const loggedUser = { email: currentUser?.email || user?.email };
-
-            // //if user exists then issue a token
-            // if (currentUser) {
-            //     axiosPublic.post('/jwt', loggedUser, { withCredentials: true })
-            //         .then(res => {
-            //             console.log(res.data);
-            //             setLoading(false);
-            //         })
-            // }
-            // else {
-            //     axiosPublic.post('/logout', loggedUser, { withCredentials: true })
-            //         .then(res => {
-            //             console.log(res.data);
-            //             setLoading(true);
-            //         })
-            // }
+            //if user exists then issue a token
+            if (currentUser) {
+                axiosPublic.post('/jwt', loggedUser, { withCredentials: true })
+                    .then(res => {
+                        console.log(res.data);
+                        setLoading(false);
+                    })
+            }
+            else {
+                axiosPublic.post('/logout', loggedUser, { withCredentials: true })
+                    .then(res => {
+                        console.log(res.data);
+                        setLoading(true);
+                    })
+            }
         });
         return () => {
             unSubscribe();
         }
-    }, [])
+    }, [axiosPublic, user?.email])
 
     // sign out
     const logOut = () => {
