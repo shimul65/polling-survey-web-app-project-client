@@ -13,6 +13,9 @@ import { IoHomeOutline } from "react-icons/io5";
 import { RiContactsLine } from "react-icons/ri";
 import { LuLayoutDashboard } from "react-icons/lu";
 import { MdOutlineContacts } from "react-icons/md";
+import { PiStarOfDavid } from "react-icons/pi";
+import useAdmin from "../../../Hooks/useAdmin";
+import useSurveyor from "../../../Hooks/useSurveyor";
 
 const Navbar = () => {
 
@@ -20,6 +23,8 @@ const Navbar = () => {
 
     const navigate = useNavigate();
     const { user, logOut } = useAuth();
+    const [isAdmin] = useAdmin();
+    const [isSurveyor] = useSurveyor();
 
     const handleLogOut = () => {
 
@@ -64,10 +69,27 @@ const Navbar = () => {
             <RiContactsLine className="text-2xl text-blue-800"></RiContactsLine>
             <p>Contact</p>
         </NavLink></li>
-        <li className="py-2"><NavLink className={'flex gap-2 items-center'} to='/dashboard/adminHome'>
-            <LuLayoutDashboard className="text-2xl text-blue-800"></LuLayoutDashboard>
-            <p>Dashboard</p>
-        </NavLink></li>
+        {
+            user && isAdmin &&
+            <li className="py-2"><NavLink className={'flex gap-2 items-center'} to='/dashboard/adminHome'>
+                <LuLayoutDashboard className="text-2xl text-blue-800"></LuLayoutDashboard>
+                <p>Dashboard</p>
+            </NavLink></li>
+        }
+        {
+            user && isSurveyor &&
+            <li className="py-2"><NavLink className={'flex gap-2 items-center'} to='/dashboard/surveyorHome'>
+                <LuLayoutDashboard className="text-2xl text-blue-800"></LuLayoutDashboard>
+                <p>Dashboard</p>
+            </NavLink></li>
+        }
+        {
+            user && !isSurveyor && !isAdmin &&
+            <li className="py-2"><NavLink className={'flex gap-2 items-center'} to='/payment'>
+                <PiStarOfDavid className="text-2xl text-blue-800"></PiStarOfDavid>
+                <p>Pro User</p>
+            </NavLink></li>
+        }
 
     </>
 

@@ -11,6 +11,7 @@ import Register from "../Pages/Register/Register";
 import Dashboard from "../Layout/Dashboard/Dashboard"
 import PrivateRoutes from "./PrivateRoutes";
 import AdminHome from "../Pages/Dashboard/Admin/AdminHome";
+import Payment from "../Pages/Home/Payment/Payment";
 // import ManageUser from "../Pages/Dashboard/Admin/ManageUser";
 
 const router = createBrowserRouter([
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
             {
                 path: "/contact",
                 element: <Contact></Contact>
+            },
+            {
+                path: "/payment",
+                element: <PrivateRoutes><Payment></Payment></PrivateRoutes>
             },
             {
                 path: "/login",
