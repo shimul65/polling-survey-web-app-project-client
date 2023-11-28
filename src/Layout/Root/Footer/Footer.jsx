@@ -1,5 +1,5 @@
 import logo from '../../../assets/survey.svg'
-import instagram2 from '../../../assets/instagram2.png' 
+import instagram2 from '../../../assets/instagram2.png'
 import twit from '../../../assets/twit.svg'
 import link from '../../../assets/link.svg'
 import instagram from '../../../assets/instagram.svg'
@@ -36,7 +36,7 @@ const Footer = () => {
                     <a className="link link-hover text-black">User forums</a>
                     <a className="link link-hover text-black">FAQs</a>
                     <a className="link link-hover text-black">What&rsquo;s new
-</a>
+                    </a>
                 </nav>
                 <nav>
                     <header className="footer-title">Quick links</header>

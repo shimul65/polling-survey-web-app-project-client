@@ -9,6 +9,9 @@ import Contact from "../Pages/Contact/Contact";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import Dashboard from "../Layout/Dashboard/Dashboard"
+import PrivateRoutes from "./PrivateRoutes";
+import AdminHome from "../Pages/Dashboard/Admin/AdminHome";
+// import ManageUser from "../Pages/Dashboard/Admin/ManageUser";
 
 const router = createBrowserRouter([
     {
@@ -26,11 +29,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/contact",
-                element: <Contact></Contact>
-            },
-            {
-                path: "/dashboard",
-                element: <Dashboard></Dashboard>
+                element: <PrivateRoutes><Contact></Contact></PrivateRoutes>
             },
             {
                 path: "/login",
@@ -40,6 +39,22 @@ const router = createBrowserRouter([
                 path: "/register",
                 element: <Register></Register>
             },
+        ]
+    },
+    {
+        path: "/dashboard",
+        element: <PrivateRoutes><Dashboard></Dashboard></PrivateRoutes>,
+        errorElement: <ErrorPage></ErrorPage>,
+        children: [
+            {
+                path: "/dashboard/adminHome",
+                element: <AdminHome></AdminHome>
+            },
+            // {
+            //     path: "/dashboard/users",
+            //     element: <ManageUser></ManageUser>
+            // },
+
         ]
     },
 ]);

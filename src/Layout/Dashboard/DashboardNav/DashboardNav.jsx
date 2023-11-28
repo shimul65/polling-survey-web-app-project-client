@@ -2,17 +2,15 @@ import { Link, NavLink, useNavigate, } from "react-router-dom";
 import logo from '../../../assets/survey.svg'
 import profile from '../../../assets/profile.png'
 // import { useState } from "react";
-import './Navbar.css'
-import { useEffect, useState } from "react";
 import Login from "../../../Pages/Login/Login";
 import useAuth from "../../../Hooks/useAuth";
 import toast from "react-hot-toast";
 // import Swal from "sweetalert2";
 import auth from "../../../Firebase/firebase.config";
+import { IoHomeOutline } from "react-icons/io5";
 
-const Navbar = () => {
+const DashboardNav = () => {
 
-    const [scrolling, setScrolling] = useState(false);
 
     const navigate = useNavigate();
     const { user, logOut } = useAuth();
@@ -31,35 +29,18 @@ const Navbar = () => {
             })
     }
 
-    useEffect(() => {
-        const handleScroll = () => {
-            const navbar2 = document.querySelector('.navbar2');
-
-            if (navbar2) {
-                setScrolling(window.scrollY > 100);
-            }
-        };
-
-        window.addEventListener('scroll', handleScroll);
-
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
 
     const navLinks = <>
-        <li className=" py-2"><NavLink to='/'>Home</NavLink></li>
-        <li className=" py-2"><NavLink to='/about'>About US</NavLink></li>
-        <li className=" py-2"><NavLink to='/contact'>Contact</NavLink></li>
-        <li className=" py-2"><NavLink to='/dashboard/adminHome'>Dashboard</NavLink></li>
-        {/* <button>Dashboard</button> */}
+        <li className=" py-2"><NavLink to='/dashboard/adminHome'>Admin</NavLink></li>
+        <li className=" py-2"><NavLink to='/dashboard/surveyRequests'>Survey Requests</NavLink></li>
+        <li className=" py-2"><NavLink to='/dashboard/surveyResponses'>Survey Responses</NavLink></li>
+        <li className=" py-2"><NavLink to='/dashboard/payments'>Payments</NavLink></li>
+        <li className=" py-2"><NavLink to='/'><IoHomeOutline className="text-2xl text-blue-800"></IoHomeOutline></NavLink></li>
 
     </>
 
-    // bg-gradient-to-b from-sky-300 to-blue-100
-
     return (
-        <div className={`fixed navbar2 z-10 w-full p-3 ${scrolling ? 'bg-gradient-to-b from-sky-300 to-blue-100' : ''}`}>
+        <div className="w-full p-3 bg-gradient-to-b from-sky-300 to-blue-100">
             <div className="navbar container mx-auto font-semibold">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -72,7 +53,7 @@ const Navbar = () => {
                     </div>
                     <Link to='/' ><img className='w-[150px]' src={logo} alt="" /></Link>
                 </div>
-                <div className={`navbar-center hidden lg:flex ${scrolling ? 'text-black' : 'text-white'} `}>
+                <div className={`navbar-center hidden lg:flex text-black`}>
                     <ul className="flex justify-center items-center gap-6 px-1">
                         {navLinks}
                     </ul>
@@ -80,11 +61,11 @@ const Navbar = () => {
 
                 <div className="navbar-end">
                     {/* <a className="btn-epic" href="https://www.epicurrence.com/" target="_blank">
-                        <div></div></a> */}
+                    <div></div></a> */}
                     {
                         user ?
                             <div className="dropdown dropdown-end ">
-                                <div className="drawer">
+                                <div className="drawer drawer-ope">
                                     <input id="my-drawer" type="checkbox" className="drawer-toggle" />
                                     <div className="drawer-content">
                                         <label htmlFor="my-drawer" tabIndex={0} className="btn btn-ghost btn-circle avatar">
@@ -153,4 +134,4 @@ const Navbar = () => {
     );
 };
 
-export default Navbar;
+export default DashboardNav;

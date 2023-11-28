@@ -75,7 +75,7 @@ const Login = () => {
 
 
     return (
-        <div>
+        <div className="container mx-auto px-[] pt-[5%]">
             <div className="card-body mx-auto my-6 rounded-2xl py-8 px-10 text-black">
                 <form onSubmit={handleLogin} method="dialog" >
                     <h2 className=' text-4xl font-extrabold text-[#05bcff] text-center' style={{

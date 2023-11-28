@@ -151,71 +151,68 @@ const Register = () => {
 
 
     return (
-        <>
-            {/* register */}
-            <div className="card-body mx-auto rounded-2xl py-8 px-10 text-black">
-                <form onSubmit={handleSubmit(onSubmit)}>
-                    <h2 className=' text-4xl font-extrabold text-[#05bcff] text-center' style={{
-                        fontFamily: 'Inter'
-                    }}>&rdquo; Create Your Account! &rdquo;</h2>
-                    <div className="divider divider-info">Register</div>
-                    <div className="form-control mt-6">
-                        <label className="label">
-                            <span className=" label-text font-semibold">Your Name</span>
-                        </label>
-                        <input type="text" placeholder="Enter your name" className="input bg-transparent input-info" {...register('name', { required: true })} required />
-                    </div>
-                    <div className="form-control mt-6">
-                        <label className="label">
-                            <span className=" label-text font-semibold">Email</span>
-                        </label>
-                        <input type="email" placeholder="Enter your email address" className="input bg-transparent input-info" {...register('email', { required: true })} required />
-                    </div>
-                    <div className="form-control mt-6">
-                        <label className="label">
-                            <span className=" label-text font-semibold">Password</span>
-                        </label>
-                        <div className=" relative ">
-                            <input type={showPass ? "text" : "password"}
-                                placeholder="Enter your password" className="input w-full bg-transparent input-info" {...register('password', { required: true })} required />
-                            <span onClick={() => setShowPass(!showPass)} className="absolute top-3 right-8 text-2xl ">
-                                {
-                                    showPass ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>
-                                }</span>
-                        </div>
-                    </div>
-                    <div className="form-control mt-6">
-                        <label className="label">
-                            <span className=" label-text font-semibold">Photo URL</span>
-                        </label>
-                        {/* <input type="text" placeholder="Enter your photo url" className="input bg-transparent input-info" name="photoURL" required /> */}
-                        <input {...register('image', { required: true })} required type="file" className="file-input w-full file-input-info" />
-                    </div>
-                    <div className='mt-4 flex gap-2 items-center'>
-                        <input type="checkbox" {...register('terms',)} id="terms" />
-                        <label htmlFor="terms">Accept Our Terms and Conditions</label>
-                    </div>
-                    <div className="form-control my-6">
-                        <button >
-                            <div className="btn-epic mx-auto shadow-md shadow-sky-300 " style={{ height: '50px', width: '60%' }}>
-                                <div>
-                                    <span style={{ left: '0' }}>Register</span><span style={{ left: '0' }}>Register</span>
-                                </div>
-                            </div>
-                        </button>
-                    </div>
-                </form>
-                <form method="dialog" className="relative ">
-                    <p className="text-center ">Already Have An Account ?
-                    </p>
-                    <button className=" text-blue-700 underline font-medium cursor-pointer absolute bottom-0 right-10">Log In</button>
-                </form>
-                <div className="divider">continue with</div>
-                <div className="w-full">
-                    <SocialLogin></SocialLogin>
+        < div className="card-body container pt-[10%] mx-auto rounded-2xl pb-8 px-10 text-black" >
+            <form onSubmit={handleSubmit(onSubmit)}>
+                <h2 className=' text-4xl font-extrabold text-[#05bcff] text-center' style={{
+                    fontFamily: 'Inter'
+                }}>&rdquo; Create Your Account! &rdquo;</h2>
+                <div className="divider divider-info">Register</div>
+                <div className="form-control mt-6">
+                    <label className="label">
+                        <span className=" label-text font-semibold">Your Name</span>
+                    </label>
+                    <input type="text" placeholder="Enter your name" className="input bg-transparent input-info" {...register('name', { required: true })} required />
                 </div>
+                <div className="form-control mt-6">
+                    <label className="label">
+                        <span className=" label-text font-semibold">Email</span>
+                    </label>
+                    <input type="email" placeholder="Enter your email address" className="input bg-transparent input-info" {...register('email', { required: true })} required />
+                </div>
+                <div className="form-control mt-6">
+                    <label className="label">
+                        <span className=" label-text font-semibold">Password</span>
+                    </label>
+                    <div className=" relative ">
+                        <input type={showPass ? "text" : "password"}
+                            placeholder="Enter your password" className="input w-full bg-transparent input-info" {...register('password', { required: true })} required />
+                        <span onClick={() => setShowPass(!showPass)} className="absolute top-3 right-8 text-2xl ">
+                            {
+                                showPass ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>
+                            }</span>
+                    </div>
+                </div>
+                <div className="form-control mt-6">
+                    <label className="label">
+                        <span className=" label-text font-semibold">Photo URL</span>
+                    </label>
+                    {/* <input type="text" placeholder="Enter your photo url" className="input bg-transparent input-info" name="photoURL" required /> */}
+                    <input {...register('image', { required: true })} required type="file" className="file-input w-full file-input-info" />
+                </div>
+                <div className='mt-4 flex gap-2 items-center'>
+                    <input type="checkbox" {...register('terms',)} id="terms" />
+                    <label htmlFor="terms">Accept Our Terms and Conditions</label>
+                </div>
+                <div className="form-control my-6">
+                    <button >
+                        <div className="btn-epic mx-auto shadow-md shadow-sky-300 " style={{ height: '50px', width: '60%' }}>
+                            <div>
+                                <span style={{ left: '0' }}>Register</span><span style={{ left: '0' }}>Register</span>
+                            </div>
+                        </div>
+                    </button>
+                </div>
+            </form>
+            <form method="dialog" className="relative ">
+                <p className="text-center ">Already Have An Account ?
+                </p>
+                <button className=" text-blue-700 underline font-medium cursor-pointer absolute bottom-0 right-10">Log In</button>
+            </form>
+            <div className="divider">continue with</div>
+            <div className="w-full">
+                <SocialLogin></SocialLogin>
             </div>
-        </>
+        </div >
     );
 };
 
