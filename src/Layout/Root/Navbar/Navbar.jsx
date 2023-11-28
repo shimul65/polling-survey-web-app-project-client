@@ -22,13 +22,6 @@ const Navbar = () => {
         logOut(auth)
             .then(() => {
                 navigate('/');
-                // Swal.fire({
-                //     position: "top-end",
-                //     icon: "success",
-                //     title: "User Log Out Successfully",
-                //     showConfirmButton: false,
-                //     timer: 1500
-                // });
                 toast.success('User Log Out Successfully')
             })
             .catch(error => {
@@ -41,7 +34,6 @@ const Navbar = () => {
     useEffect(() => {
         const handleScroll = () => {
             const navbar2 = document.querySelector('.navbar2');
-            // const customClass = 'bg-gradient-to-b from-sky-300 to-blue-100';
 
             if (navbar2) {
                 setScrolling(window.scrollY > 100);
@@ -59,6 +51,8 @@ const Navbar = () => {
         <li className=" py-2"><NavLink to='/'>Home</NavLink></li>
         <li className=" py-2"><NavLink to='/about'>About US</NavLink></li>
         <li className=" py-2"><NavLink to='/contact'>Contact</NavLink></li>
+        <li className=" py-2"><NavLink to='/dashboard'>Dashboard</NavLink></li>
+        {/* <button>Dashboard</button> */}
 
     </>
 
@@ -90,28 +84,48 @@ const Navbar = () => {
                     {
                         user ?
                             <div className="dropdown dropdown-end ">
-                                <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                                    <div className="w-24 rounded-full">
-                                        <img src={user ? user.photoURL : profile} />
-                                    </div>
-                                </label>
-                                <ul tabIndex={0} className="menu border menu-sm dropdown-content mt-3 z-[1] p-2 shadow-2xl bg-base-100 rounded-box w-fit">
-                                    <li>
-                                        <div className="text-lg"> Name : <br />{user?.displayName}</div>
-
-                                    </li>
-                                    <li>
-                                        <div className="text-lg">Email : <br />{user?.email}</div>
-
-                                    </li>
-                                    <button onClick={handleLogOut}>
-                                        <div className="btn-epic mx-auto shadow-md shadow-sky-300" style={{ height: '50px', width: '60%' }}>
-                                            <div>
-                                                <span style={{ left: '0' }}>Log Out</span><span style={{ left: '0' }}>Log Out</span>
+                                <div className="drawer">
+                                    <input id="my-drawer" type="checkbox" className="drawer-toggle" />
+                                    <div className="drawer-content">
+                                        <label htmlFor="my-drawer" tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                                            <div className="w-24 rounded-full">
+                                                <img src={user ? user.photoURL : profile} />
                                             </div>
-                                        </div>
-                                    </button>
-                                </ul>
+                                        </label>
+                                    </div>
+                                    <div className="drawer-side z-10" style={{
+                                        fontFamily: 'Inter'
+                                    }}>
+                                        <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
+                                        <div className="pt-4 w-80 min-h-full bg-base-200 text-base-content">
+                                            <Link to='/' ><img className='w-[150px] mt-5 mx-auto' src={logo} alt="" /></Link>
+                                            <div className="border mt-5 mx-4 rounded-lg py-5 bg-sky-100">
+                                                <div className="flex flex-col items-center space-y-4">
+                                                    <img className="rounded-full w-52 mx-auto" src={user ? user.photoURL : profile} />
+                                                    <h2 className="text-2xl font-semibold">{user?.displayName}</h2>
+                                                    <div className="text-xl">{user?.email}</div>
+                                                </div>
+                                            </div>
+                                            <div className="border mt-5 ">
+                                                <h2 className="text-2xl text-center py-3 bg-sky-300">Dashboard</h2>
+                                                <ul className="menu rounded-box text-lg">
+                                                    <li><a>Manage Users</a></li>
+                                                    <li><a>Survey Status</a></li>
+                                                    <li><a>Survey Responses</a></li>
+                                                    <li><a>Payments</a></li>
+                                                </ul>
+                                            </div>
+                                            <button>
+
+                                            </button>
+
+                                            <div onClick={handleLogOut} className="btn-epic mt-5 mx-auto shadow-md border shadow-sky-300" style={{ height: '50px', width: '70%' }}>
+                                                <div>
+                                                    <span style={{ left: '' }}>Log Out</span><span style={{ left: '' }}>Log Out</span>
+                                                </div>
+                                            </div></div>
+                                    </div>
+                                </div>
                             </div>
                             :
                             <>
