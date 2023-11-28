@@ -9,6 +9,10 @@ import useAuth from "../../../Hooks/useAuth";
 import toast from "react-hot-toast";
 // import Swal from "sweetalert2";
 import auth from "../../../Firebase/firebase.config";
+import { IoHomeOutline } from "react-icons/io5";
+import { RiContactsLine } from "react-icons/ri";
+import { LuLayoutDashboard } from "react-icons/lu";
+import { MdOutlineContacts } from "react-icons/md";
 
 const Navbar = () => {
 
@@ -48,11 +52,22 @@ const Navbar = () => {
     }, []);
 
     const navLinks = <>
-        <li className=" py-2"><NavLink to='/'>Home</NavLink></li>
-        <li className=" py-2"><NavLink to='/about'>About US</NavLink></li>
-        <li className=" py-2"><NavLink to='/contact'>Contact</NavLink></li>
-        <li className=" py-2"><NavLink to='/dashboard/adminHome'>Dashboard</NavLink></li>
-        {/* <button>Dashboard</button> */}
+        <li className="py-2"><NavLink className={'flex gap-2 items-center'} to='/'>
+            <IoHomeOutline className="text-2xl text-blue-800"></IoHomeOutline>
+            <p>Home</p>
+        </NavLink></li>
+        <li className="py-2"><NavLink className={'flex gap-2 items-center'} to='/about'>
+            <MdOutlineContacts className="text-2xl text-blue-800"></MdOutlineContacts>
+            <p>About US</p>
+        </NavLink></li>
+        <li className="py-2"><NavLink className={'flex gap-2 items-center'} to='/contact'>
+            <RiContactsLine className="text-2xl text-blue-800"></RiContactsLine>
+            <p>Contact</p>
+        </NavLink></li>
+        <li className="py-2"><NavLink className={'flex gap-2 items-center'} to='/dashboard/adminHome'>
+            <LuLayoutDashboard className="text-2xl text-blue-800"></LuLayoutDashboard>
+            <p>Dashboard</p>
+        </NavLink></li>
 
     </>
 

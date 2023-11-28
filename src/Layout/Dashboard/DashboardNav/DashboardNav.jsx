@@ -8,6 +8,10 @@ import toast from "react-hot-toast";
 // import Swal from "sweetalert2";
 import auth from "../../../Firebase/firebase.config";
 import { IoHomeOutline } from "react-icons/io5";
+import { RiAdminLine } from "react-icons/ri";
+import { RiSurveyLine } from "react-icons/ri";
+import { HiOutlineSquaresPlus } from "react-icons/hi2";
+import { SlPaypal } from "react-icons/sl";
 
 const DashboardNav = () => {
 
@@ -31,11 +35,26 @@ const DashboardNav = () => {
 
 
     const navLinks = <>
-        <li className=" py-2"><NavLink to='/dashboard/adminHome'>Admin</NavLink></li>
-        <li className=" py-2"><NavLink to='/dashboard/surveyRequests'>Survey Requests</NavLink></li>
-        <li className=" py-2"><NavLink to='/dashboard/surveyResponses'>Survey Responses</NavLink></li>
-        <li className=" py-2"><NavLink to='/dashboard/payments'>Payments</NavLink></li>
-        <li className=" py-2"><NavLink to='/'><IoHomeOutline className="text-2xl text-blue-800"></IoHomeOutline></NavLink></li>
+        <li className="py-2"><NavLink className={'flex gap-2 items-center'} to='/dashboard/adminHome'>
+            <RiAdminLine className="text-2xl text-blue-800"></RiAdminLine>
+            <p>Admin</p>
+        </NavLink></li>
+        <li className="py-2"><NavLink className={'flex gap-2 items-center'} to='/dashboard/surveyRequests'>
+            <RiSurveyLine className="text-2xl text-blue-800"></RiSurveyLine>
+            <p>Survey Requests</p>
+        </NavLink></li>
+        <li className="py-2"><NavLink className={'flex gap-2 items-center'} to='/dashboard/surveyResponses'>
+            <HiOutlineSquaresPlus className="text-2xl text-blue-800"></HiOutlineSquaresPlus>
+            <p>Survey Responses</p>
+        </NavLink></li>
+        <li className="py-2"><NavLink className={'flex gap-2 items-center'} to='/dashboard/payments'>
+            <SlPaypal className="text-2xl text-blue-800"></SlPaypal>
+            <p>Payments</p>
+        </NavLink></li>
+        <li className="py-2"><NavLink className={'flex gap-2 items-center'} to='/'>
+            <IoHomeOutline className="text-2xl text-blue-800"></IoHomeOutline>
+            <p>Home</p>
+        </NavLink></li>
 
     </>
 
