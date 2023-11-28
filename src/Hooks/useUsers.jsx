@@ -4,13 +4,14 @@ import useAxiosSecure from "./useAxiosSecure";
 
 
 const useUsers = () => {
+    const { user, loading } = useAuth()
     const axiosSecure = useAxiosSecure();
-    const { user } = useAuth()
 
     //get users data from server using tanstackQuery
     const { data: allUsers = [], isPending, isError, error, refetch } = useQuery({
 
         queryKey: ['users', user?.email],
+        enabled: !loading,
         queryFn: async () => {
             const res = await axiosSecure.get(`/users`)
             return res.data;

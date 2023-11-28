@@ -78,18 +78,31 @@ const CheckOutForm = () => {
                     date: new Date(),
                 }
                 const res = await axiosSecure.post('/payments', payment)
-                // console.log('payment saved', res);
-                if (res.data?.paymentResult?.insertedId) {
-                    Swal.fire({
-                        title: 'Success!',
-                        text: `Payment Successfully`,
-                        icon: 'success',
-                        confirmButtonText: 'Cool',
-                    }).then((result) => {
-                        if (result.isConfirmed) {
-                            navigate('/')
-                        }
-                    });
+                // console.log('payment saved', res.data);
+
+                if (res.data?.insertedId) {
+                    const updateStatus = { role: 'Pro User' }
+                    const res = await axiosSecure.patch(`/users/${user.email}`, updateStatus)
+                    console.log(res.data)
+                    if (res.data.modifiedCount > 0) {
+                        navigate('/')
+                        Swal.fire(
+                            'Payment Successful!',
+                            `You're a Pro User now.`,
+                            'success'
+                        )
+                    }
+
+                    // Swal.fire({
+                    //     title: 'Success!',
+                    //     text: `Payment Successfully`,
+                    //     icon: 'success',
+                    //     confirmButtonText: 'Cool',
+                    // }).then((result) => {
+                    //     if (result.isConfirmed) {
+                    //         navigate('/')
+                    //     }
+                    // });
                 }
             }
         }

@@ -16,6 +16,7 @@ import { MdOutlineContacts } from "react-icons/md";
 import { PiStarOfDavid } from "react-icons/pi";
 import useAdmin from "../../../Hooks/useAdmin";
 import useSurveyor from "../../../Hooks/useSurveyor";
+import useUsers from "../../../Hooks/useUsers";
 
 const Navbar = () => {
 
@@ -25,6 +26,8 @@ const Navbar = () => {
     const { user, logOut } = useAuth();
     const [isAdmin] = useAdmin();
     const [isSurveyor] = useSurveyor();
+    const [allUsers] = useUsers();
+    const proUser = allUsers?.map(user => user.role === 'Pro User');
 
     const handleLogOut = () => {
 
@@ -84,7 +87,7 @@ const Navbar = () => {
             </NavLink></li>
         }
         {
-            user && !isSurveyor && !isAdmin &&
+            user && !proUser && !isSurveyor && !isAdmin && 
             <li className="py-2"><NavLink className={'flex gap-2 items-center'} to='/payment'>
                 <PiStarOfDavid className="text-2xl text-blue-800"></PiStarOfDavid>
                 <p>Pro User</p>
