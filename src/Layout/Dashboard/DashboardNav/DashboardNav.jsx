@@ -12,6 +12,7 @@ import { RiAdminLine } from "react-icons/ri";
 import { RiSurveyLine } from "react-icons/ri";
 import { HiOutlineSquaresPlus } from "react-icons/hi2";
 import { SlPaypal } from "react-icons/sl";
+import DrawerDashboard from "../../../Components/DrawerDashboard";
 
 const DashboardNav = () => {
 
@@ -106,19 +107,7 @@ const DashboardNav = () => {
                                                     <div className="text-xl">{user?.email}</div>
                                                 </div>
                                             </div>
-                                            <div className="border mt-5 ">
-                                                <h2 className="text-2xl text-center py-3 bg-sky-300">Dashboard</h2>
-                                                <ul className="menu rounded-box text-lg">
-                                                    <li><a>Manage Users</a></li>
-                                                    <li><a>Survey Status</a></li>
-                                                    <li><a>Survey Responses</a></li>
-                                                    <li><a>Payments</a></li>
-                                                </ul>
-                                            </div>
-                                            <button>
-
-                                            </button>
-
+                                            <DrawerDashboard></DrawerDashboard>
                                             <div onClick={handleLogOut} className="btn-epic mt-5 mx-auto shadow-md border shadow-sky-300" style={{ height: '50px', width: '70%' }}>
                                                 <div>
                                                     <span style={{ left: '' }}>Log Out</span><span style={{ left: '' }}>Log Out</span>

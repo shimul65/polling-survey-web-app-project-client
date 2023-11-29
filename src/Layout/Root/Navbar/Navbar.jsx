@@ -17,6 +17,8 @@ import { PiStarOfDavid } from "react-icons/pi";
 import useAdmin from "../../../Hooks/useAdmin";
 import useSurveyor from "../../../Hooks/useSurveyor";
 import useUsers from "../../../Hooks/useUsers";
+// import { Typewriter } from "react-simple-typewriter";
+import DrawerDashboard from "../../../Components/DrawerDashboard";
 
 const Navbar = () => {
 
@@ -87,7 +89,7 @@ const Navbar = () => {
             </NavLink></li>
         }
         {
-            user && !proUser && !isSurveyor && !isAdmin && 
+            user && !proUser && !isSurveyor && !isAdmin &&
             <li className="py-2"><NavLink className={'flex gap-2 items-center'} to='/payment'>
                 <PiStarOfDavid className="text-2xl text-blue-800"></PiStarOfDavid>
                 <p>Pro User</p>
@@ -146,19 +148,7 @@ const Navbar = () => {
                                                     <div className="text-xl">{user?.email}</div>
                                                 </div>
                                             </div>
-                                            <div className="border mt-5 ">
-                                                <h2 className="text-2xl text-center py-3 bg-sky-300">Dashboard</h2>
-                                                <ul className="menu rounded-box text-lg">
-                                                    <li><a>Manage Users</a></li>
-                                                    <li><a>Survey Status</a></li>
-                                                    <li><a>Survey Responses</a></li>
-                                                    <li><a>Payments</a></li>
-                                                </ul>
-                                            </div>
-                                            <button>
-
-                                            </button>
-
+                                            <DrawerDashboard></DrawerDashboard>
                                             <div onClick={handleLogOut} className="btn-epic mt-5 mx-auto shadow-md border shadow-sky-300" style={{ height: '50px', width: '70%' }}>
                                                 <div>
                                                     <span style={{ left: '' }}>Log Out</span><span style={{ left: '' }}>Log Out</span>

@@ -12,7 +12,7 @@ const AdminHome = () => {
 
     // update user to admin role by patch
     const handleAdminRole = user => {
-        const updateStatus = { role: 'Admin'}
+        const updateStatus = { role: 'Admin' }
         Swal.fire({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",
@@ -40,7 +40,7 @@ const AdminHome = () => {
     }
 
     const handleSurveyorRole = user => {
-        const updateStatus = { role: 'Surveyor'}
+        const updateStatus = { role: 'Surveyor' }
         Swal.fire({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",
@@ -101,7 +101,9 @@ const AdminHome = () => {
                 <SectionTitle heading={'MANAGE ALL USERS'} ></SectionTitle>
             </div>
             <div className="uppercase flex justify-around font-semibold my-16">
-                <h2 className="text-5xl">Total Users: {allUsers?.length}</h2>
+                <h2 className="text-5xl" style={{
+                    fontFamily: 'Inter'
+                }}>Total Users: {allUsers?.length}</h2>
             </div>
             <div className="overflow-x-auto mx-[5%]">
                 <table className="table">
