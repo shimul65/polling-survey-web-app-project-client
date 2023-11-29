@@ -1,26 +1,30 @@
-import { useForm } from "react-hook-form";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
-import useAxiosPublic from "../../../Hooks/useAxiosPublic";
-import useAxiosSecure from "../../../Hooks/useAxiosSecure";
-import Swal from "sweetalert2";
 import { useState } from "react";
+import { useForm } from "react-hook-form";
+import useAxiosSecure from "../../../Hooks/useAxiosSecure";
+import useAxiosPublic from "../../../Hooks/useAxiosPublic";
+import Swal from "sweetalert2";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import useAuth from "../../../Hooks/useAuth";
 
 const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY
 const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
 
-const CreateSurvey = () => {
+const UpdateSurvey = () => {
 
-    const { user } = useAuth();
+    const { _id, title, question, category, deadline } = useLoaderData();
+
+
+    const navigate = useNavigate();
+
     const axiosPublic = useAxiosPublic();
     const axiosSecure = useAxiosSecure();
-    const { register, handleSubmit, reset } = useForm();
+    const { register, handleSubmit, } = useForm();
 
-    const [startDate, setStartDate] = useState(new Date());
+    const [startDate, setStartDate] = useState(new Date(deadline));
 
-    const onSubmit = async (data) => {
+    const onSubmitUpdate = async (data) => {
 
         // upload image to imgbb then get an url
         const imageFile = { image: data.image[0] }
@@ -30,26 +34,24 @@ const CreateSurvey = () => {
             }
         });
         if (res.data.success) {
-
-            const surveyInfo = {
-                email: user.email,
+            const updateSurvey = {
                 title: data.title,
                 question: data.question,
                 image: res.data.data.display_url,
                 category: data.category,
                 deadline: startDate,
             }
-            axiosSecure.post('/surveys', surveyInfo)
+            axiosSecure.patch(`/surveys/${_id}`, updateSurvey)
                 .then(res => {
                     console.log(res.data);
-                    if (res.data.insertedId) {
+                    if (res.data.modifiedCount > 0) {
                         Swal.fire({
                             title: 'Success!',
-                            text: `Your Survey Added Successfully`,
+                            text: `Your Survey Update Successfully`,
                             icon: 'success',
                             confirmButtonText: 'Cool'
                         })
-                        reset();
+                        navigate('/dashboard/surveyorHome')
                     }
                 })
         }
@@ -58,10 +60,11 @@ const CreateSurvey = () => {
     return (
         <div className="mb-16">
             <div className="mt-16">
-                <SectionTitle heading={'CREATE YOUR SURVEY'} ></SectionTitle>
+                <SectionTitle heading={'UPDATE YOUR SURVEY'} ></SectionTitle>
             </div>
+
             <div className="mx-[5%] border p-12 bg-white mt-16">
-                <form onSubmit={handleSubmit(onSubmit)}>
+                <form onSubmit={handleSubmit(onSubmitUpdate)}>
                     <div className="flex gap-6">
                         <div className="form-control w-full">
                             <label className="label">
@@ -70,16 +73,17 @@ const CreateSurvey = () => {
                             <input
                                 type="text"
                                 placeholder="Survey Title"
+                                defaultValue={title}
                                 {...register('title', { required: true })}
                                 required
                                 className="input input-info" />
                         </div>
-                        
+
                         <div className="form-control w-full">
                             <label className="label">
                                 <span className="label-text text-blue-800 text-base">Survey Category*</span>
                             </label>
-                            <select defaultValue="default" {...register('category', { required: true })}
+                            <select defaultValue={category} {...register('category', { required: true })}
                                 className="select select-bordered border border-sky-400 w-full">
                                 <option disabled value="default">Select a category</option>
                                 <option value="Technology and Software">Technology and Software</option>
@@ -104,12 +108,12 @@ const CreateSurvey = () => {
                             onChange={(date) => setStartDate(date)}
                         />
                     </div>
-                    
+
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text text-blue-800 text-base">Survey Questions</span>
                         </label>
-                        <textarea {...register('question')} className="textarea textarea-bordered h-52 border-sky-400" placeholder="Survey Questions Type Here ... (Yes/No)"></textarea>
+                        <textarea defaultValue={question} {...register('question')} className="textarea textarea-bordered h-52 border-sky-400" placeholder="Survey Questions Type Here ... (Yes/No)"></textarea>
                     </div>
 
                     <div className="form-control w-full my-6">
@@ -120,7 +124,7 @@ const CreateSurvey = () => {
                         <button >
                             <div className="btn-epic shadow-md shadow-sky-300 " style={{ height: '50px', width: '25%' }}>
                                 <div>
-                                    <span style={{ left: '0' }}>Add Survey</span><span style={{ left: '0' }}>Add Survey</span>
+                                    <span style={{ left: '0' }}>Update Survey</span><span style={{ left: '0' }}>Update Survey</span>
                                 </div>
                             </div>
                         </button>
@@ -131,4 +135,4 @@ const CreateSurvey = () => {
     );
 };
 
-export default CreateSurvey;
+export default UpdateSurvey;

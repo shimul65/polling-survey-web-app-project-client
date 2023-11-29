@@ -12,7 +12,7 @@ import { RiAdminLine } from "react-icons/ri";
 import { RiSurveyLine } from "react-icons/ri";
 import { HiOutlineSquaresPlus } from "react-icons/hi2";
 import { SlPaypal } from "react-icons/sl";
-import DrawerDashboard from "../../../Components/DrawerDashboard";
+import DrawerDashboard from "../../../Components/DrawerDashboard/DrawerDashboard";
 import useAdmin from "../../../Hooks/useAdmin";
 import useSurveyor from "../../../Hooks/useSurveyor";
 

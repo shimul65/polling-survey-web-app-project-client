@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body::-webkit-scrollbar {
+    background-color: transparent;
+}
+
+body::-webkit-scrollbar-thumb{
+   background: linear-gradient(to bottom, #6DD7FF, #EBF4FF);
+   border-bottom-right-radius: 20px;
+   border-bottom-left-radius: 20px;
+}
+
+body{
+    overflow-x: hidden;
+}

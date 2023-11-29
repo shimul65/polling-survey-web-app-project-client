@@ -15,6 +15,7 @@ import Payment from "../Pages/Home/Payment/Payment";
 import PaymentHistory from "../Pages/Dashboard/Admin/PaymentHistory";
 import SurveyorHome from "../Pages/Dashboard/Survyeor/SurveyorHome";
 import CreateSurvey from "../Pages/Dashboard/Survyeor/CreateSurvey";
+import UpdateSurvey from "../Pages/Dashboard/Survyeor/UpdateSurvey";
 // import ManageUser from "../Pages/Dashboard/Admin/ManageUser";
 
 const router = createBrowserRouter([
@@ -72,6 +73,11 @@ const router = createBrowserRouter([
             {
                 path: "/dashboard/createSurvey",
                 element: <CreateSurvey></CreateSurvey>
+            },
+            {
+                path: "/dashboard/updateSurvey/:id",
+                element: <UpdateSurvey></UpdateSurvey>,
+                loader: ({ params }) => fetch(`http://localhost:5066/surveys/${params?.id}`)
             },
 
 

@@ -1,15 +1,15 @@
 import { Typewriter } from "react-simple-typewriter";
-import useAdmin from "../Hooks/useAdmin";
-import useSurveyor from "../Hooks/useSurveyor";
+import useAdmin from "../../Hooks/useAdmin";
+import useSurveyor from "../../Hooks/useSurveyor";
 import { NavLink } from "react-router-dom";
 import { RiAdminLine, RiContactsLine, RiSurveyLine } from "react-icons/ri";
 import { HiOutlineSquaresPlus } from "react-icons/hi2";
 import { SlPaypal } from "react-icons/sl";
 import { IoHomeOutline } from "react-icons/io5";
 import { MdOutlineContacts } from "react-icons/md";
-import useUsers from "../Hooks/useUsers";
+import useUsers from "../../Hooks/useUsers";
 import { PiStarOfDavid } from "react-icons/pi";
-import useAuth from "../Hooks/useAuth";
+import useAuth from "../../Hooks/useAuth";
 
 
 const DrawerDashboard = () => {

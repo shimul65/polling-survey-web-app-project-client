@@ -18,7 +18,7 @@ import useAdmin from "../../../Hooks/useAdmin";
 import useSurveyor from "../../../Hooks/useSurveyor";
 import useUsers from "../../../Hooks/useUsers";
 // import { Typewriter } from "react-simple-typewriter";
-import DrawerDashboard from "../../../Components/DrawerDashboard";
+import DrawerDashboard from "../../../Components/DrawerDashboard/DrawerDashboard";
 
 const Navbar = () => {
 
