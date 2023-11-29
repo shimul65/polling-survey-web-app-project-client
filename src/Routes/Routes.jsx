@@ -13,6 +13,8 @@ import PrivateRoutes from "./PrivateRoutes";
 import AdminHome from "../Pages/Dashboard/Admin/AdminHome";
 import Payment from "../Pages/Home/Payment/Payment";
 import PaymentHistory from "../Pages/Dashboard/Admin/PaymentHistory";
+import SurveyorHome from "../Pages/Dashboard/Survyeor/SurveyorHome";
+import CreateSurvey from "../Pages/Dashboard/Survyeor/CreateSurvey";
 // import ManageUser from "../Pages/Dashboard/Admin/ManageUser";
 
 const router = createBrowserRouter([
@@ -52,6 +54,7 @@ const router = createBrowserRouter([
         element: <PrivateRoutes><Dashboard></Dashboard></PrivateRoutes>,
         errorElement: <ErrorPage></ErrorPage>,
         children: [
+            // admin routes
             {
                 path: "/dashboard/adminHome",
                 element: <AdminHome></AdminHome>
@@ -60,6 +63,17 @@ const router = createBrowserRouter([
                 path: "/dashboard/payments",
                 element: <PaymentHistory></PaymentHistory>
             },
+
+            // surveyor routes
+            {
+                path: "/dashboard/surveyorHome",
+                element: <SurveyorHome></SurveyorHome>
+            },
+            {
+                path: "/dashboard/createSurvey",
+                element: <CreateSurvey></CreateSurvey>
+            },
+
 
         ]
     },

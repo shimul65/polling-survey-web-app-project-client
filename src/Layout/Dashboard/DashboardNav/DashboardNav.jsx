@@ -13,12 +13,16 @@ import { RiSurveyLine } from "react-icons/ri";
 import { HiOutlineSquaresPlus } from "react-icons/hi2";
 import { SlPaypal } from "react-icons/sl";
 import DrawerDashboard from "../../../Components/DrawerDashboard";
+import useAdmin from "../../../Hooks/useAdmin";
+import useSurveyor from "../../../Hooks/useSurveyor";
 
 const DashboardNav = () => {
 
 
     const navigate = useNavigate();
     const { user, logOut } = useAuth();
+    const [isAdmin] = useAdmin();
+    const [isSurveyor] = useSurveyor();
 
     const handleLogOut = () => {
 
@@ -36,22 +40,41 @@ const DashboardNav = () => {
 
 
     const navLinks = <>
-        <li className="py-2"><NavLink className={'flex gap-2 items-center'} to='/dashboard/adminHome'>
-            <RiAdminLine className="text-2xl text-blue-800"></RiAdminLine>
-            <p>Admin</p>
-        </NavLink></li>
-        <li className="py-2"><NavLink className={'flex gap-2 items-center'} to='/dashboard/surveyRequests'>
-            <RiSurveyLine className="text-2xl text-blue-800"></RiSurveyLine>
-            <p>Survey Requests</p>
-        </NavLink></li>
-        <li className="py-2"><NavLink className={'flex gap-2 items-center'} to='/dashboard/surveyResponses'>
-            <HiOutlineSquaresPlus className="text-2xl text-blue-800"></HiOutlineSquaresPlus>
-            <p>Survey Responses</p>
-        </NavLink></li>
-        <li className="py-2"><NavLink className={'flex gap-2 items-center'} to='/dashboard/payments'>
-            <SlPaypal className="text-2xl text-blue-800"></SlPaypal>
-            <p>Payments</p>
-        </NavLink></li>
+        {
+            isAdmin && <>
+                <li className="py-2"><NavLink className={'flex gap-2 items-center'} to='/dashboard/adminHome'>
+                    <RiAdminLine className="text-2xl text-blue-800"></RiAdminLine>
+                    <p>Admin</p>
+                </NavLink></li>
+                <li className="py-2"><NavLink className={'flex gap-2 items-center'} to='/dashboard/surveyRequests'>
+                    <RiSurveyLine className="text-2xl text-blue-800"></RiSurveyLine>
+                    <p>Survey Requests</p>
+                </NavLink></li>
+                <li className="py-2"><NavLink className={'flex gap-2 items-center'} to='/dashboard/surveyResponses'>
+                    <HiOutlineSquaresPlus className="text-2xl text-blue-800"></HiOutlineSquaresPlus>
+                    <p>Survey Responses</p>
+                </NavLink></li>
+                <li className="py-2"><NavLink className={'flex gap-2 items-center'} to='/dashboard/payments'>
+                    <SlPaypal className="text-2xl text-blue-800"></SlPaypal>
+                    <p>Payments</p>
+                </NavLink></li></>
+        }
+        {
+            isSurveyor && <>
+                <li className="py-2"><NavLink className={'flex gap-2 items-center'} to='/dashboard/surveyorHome'>
+                    <RiAdminLine className="text-2xl text-blue-800"></RiAdminLine>
+                    <p>My Survey</p>
+                </NavLink></li>
+                <li className="py-2"><NavLink className={'flex gap-2 items-center'} to='/dashboard/createSurvey'>
+                    <RiSurveyLine className="text-2xl text-blue-800"></RiSurveyLine>
+                    <p>Create Survey</p>
+                </NavLink></li>
+                <li className="py-2"><NavLink className={'flex gap-2 items-center'} to='/dashboard/mySurveyResponses'>
+                    <HiOutlineSquaresPlus className="text-2xl text-blue-800"></HiOutlineSquaresPlus>
+                    <p>Survey Responses</p>
+                </NavLink></li>
+            </>
+        }
         <li className="py-2"><NavLink className={'flex gap-2 items-center'} to='/'>
             <IoHomeOutline className="text-2xl text-blue-800"></IoHomeOutline>
             <p>Home</p>
@@ -80,8 +103,6 @@ const DashboardNav = () => {
                 </div>
 
                 <div className="navbar-end">
-                    {/* <a className="btn-epic" href="https://www.epicurrence.com/" target="_blank">
-                    <div></div></a> */}
                     {
                         user ?
                             <div className="dropdown dropdown-end ">
@@ -112,7 +133,8 @@ const DashboardNav = () => {
                                                 <div>
                                                     <span style={{ left: '' }}>Log Out</span><span style={{ left: '' }}>Log Out</span>
                                                 </div>
-                                            </div></div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

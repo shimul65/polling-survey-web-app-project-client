@@ -98,8 +98,6 @@ const Navbar = () => {
 
     </>
 
-    // bg-gradient-to-b from-sky-300 to-blue-100
-
     return (
         <div className={`fixed navbar2 z-10 w-full p-3 ${scrolling ? 'bg-gradient-to-b from-sky-300 to-blue-100' : ''}`}>
             <div className="navbar container mx-auto font-semibold">
@@ -121,8 +119,6 @@ const Navbar = () => {
                 </div>
 
                 <div className="navbar-end">
-                    {/* <a className="btn-epic" href="https://www.epicurrence.com/" target="_blank">
-                        <div></div></a> */}
                     {
                         user ?
                             <div className="dropdown dropdown-end ">
@@ -143,7 +139,7 @@ const Navbar = () => {
                                             <Link to='/' ><img className='w-[150px] mt-5 mx-auto' src={logo} alt="" /></Link>
                                             <div className="border mt-5 mx-4 rounded-lg py-5 bg-sky-100">
                                                 <div className="flex flex-col items-center space-y-4">
-                                                    <img className="rounded-full w-52 mx-auto" src={user ? user.photoURL : profile} />
+                                                    <img className="rounded-full w-44 h-44 mx-auto" src={user ? user.photoURL : profile} />
                                                     <h2 className="text-2xl font-semibold">{user?.displayName}</h2>
                                                     <div className="text-xl">{user?.email}</div>
                                                 </div>

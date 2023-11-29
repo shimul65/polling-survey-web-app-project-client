@@ -118,21 +118,21 @@ const DrawerDashboard = () => {
                         ]}
                     /></h2>
                     <ul className="menu rounded-box text-lg">
-                        <li className="py-2"><NavLink className={'flex gap-2 items-center'} to='/'>
-                            <IoHomeOutline className="text-2xl text-blue-800"></IoHomeOutline>
-                            <p>Home</p>
-                        </NavLink></li>
-                        <li className="py-2"><NavLink className={'flex gap-2 items-center'} to='/dashboard/adminHome'>
+                        <li className="py-2"><NavLink className={'flex gap-2 items-center'} to='/dashboard/surveyorHome'>
                             <RiAdminLine className="text-2xl text-blue-800"></RiAdminLine>
                             <p>My Survey</p>
                         </NavLink></li>
-                        <li className="py-2"><NavLink className={'flex gap-2 items-center'} to='/dashboard/surveyRequests'>
+                        <li className="py-2"><NavLink className={'flex gap-2 items-center'} to='/dashboard/createSurvey'>
                             <RiSurveyLine className="text-2xl text-blue-800"></RiSurveyLine>
                             <p>Create Survey</p>
                         </NavLink></li>
-                        <li className="py-2"><NavLink className={'flex gap-2 items-center'} to='/dashboard/surveyResponses'>
+                        <li className="py-2"><NavLink className={'flex gap-2 items-center'} to='/dashboard/mySurveyResponses'>
                             <HiOutlineSquaresPlus className="text-2xl text-blue-800"></HiOutlineSquaresPlus>
                             <p>Survey Responses</p>
+                        </NavLink></li>
+                        <li className="py-2"><NavLink className={'flex gap-2 items-center'} to='/'>
+                            <IoHomeOutline className="text-2xl text-blue-800"></IoHomeOutline>
+                            <p>Home</p>
                         </NavLink></li>
                     </ul>
                 </>
