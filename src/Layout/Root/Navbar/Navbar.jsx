@@ -29,7 +29,7 @@ const Navbar = () => {
     const [isAdmin] = useAdmin();
     const [isSurveyor] = useSurveyor();
     const [allUsers] = useUsers();
-    const proUser = allUsers?.map(user => user.role === 'Pro User');
+    const proUser = allUsers?.some(singleUser => singleUser?.role === 'Pro User' && singleUser.email === user.email);
 
     const handleLogOut = () => {
 
@@ -89,7 +89,7 @@ const Navbar = () => {
             </NavLink></li>
         }
         {
-            user && !proUser && !isSurveyor && !isAdmin &&
+            user && !isAdmin && !isSurveyor && !proUser &&
             <li className="py-2"><NavLink className={'flex gap-2 items-center'} to='/payment'>
                 <PiStarOfDavid className="text-2xl text-blue-800"></PiStarOfDavid>
                 <p>Pro User</p>

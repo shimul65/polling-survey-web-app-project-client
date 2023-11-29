@@ -2,11 +2,13 @@ import Swal from "sweetalert2";
 import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import useUsers from "../../../Hooks/useUsers";
+import { useEffect, useState } from "react";
 
 
 const AdminHome = () => {
 
     const [allUsers, , , , refetch] = useUsers();
+    const [filterUsers, setFilterUser] = useState(allUsers);
 
     const axiosSecure = useAxiosSecure();
 
@@ -38,7 +40,7 @@ const AdminHome = () => {
             }
         })
     }
-
+    // update user to surveyor role by patch
     const handleSurveyorRole = user => {
         const updateStatus = { role: 'Surveyor' }
         Swal.fire({
@@ -66,6 +68,23 @@ const AdminHome = () => {
             }
         })
     }
+
+    //filter user 
+    const handleFilter = e => {
+        e.preventDefault()
+        const role = e.target.value;
+        if (role === 'all' || role === 'default') {
+            setFilterUser(allUsers);
+        }
+        else {
+            const users = allUsers.filter(user => user?.role === role)
+            setFilterUser(users)
+        }
+    }
+    useEffect(() => {
+        setFilterUser(allUsers);
+    }, [allUsers]);
+
 
     // delete user
     const handleDelete = _id => {
@@ -96,7 +115,7 @@ const AdminHome = () => {
     }
 
     return (
-        <div>
+        <div className="mb-16">
             <div className="mt-16">
                 <SectionTitle heading={'MANAGE ALL USERS'} ></SectionTitle>
             </div>
@@ -114,13 +133,22 @@ const AdminHome = () => {
                             </th>
                             <th>NAME</th>
                             <th className="w-[10%]">EMAIL</th>
-                            <th className="text-center">ROLE</th>
+                            <th className="text-center">
+                                <select onClick={handleFilter} defaultValue="default"
+                                    className="select select-bordered w-[50%]">
+                                    <option disabled value="default">Role</option>
+                                    <option value="all">All User</option>
+                                    <option value="Admin">Admin</option>
+                                    <option value="Surveyor">Surveyor</option>
+                                    <option value="Pro User">Pro User</option>
+                                </select>
+                            </th>
                             <th className="rounded-tr-2xl">ACTION</th>
                         </tr>
                     </thead>
                     <tbody>
                         {
-                            allUsers?.map((user, index) =>
+                            filterUsers?.map((user, index) =>
                                 <tr key={user._id}>
                                     <th className="text-center text-2xl">
                                         {index + 1}

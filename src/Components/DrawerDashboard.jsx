@@ -7,12 +7,18 @@ import { HiOutlineSquaresPlus } from "react-icons/hi2";
 import { SlPaypal } from "react-icons/sl";
 import { IoHomeOutline } from "react-icons/io5";
 import { MdOutlineContacts } from "react-icons/md";
+import useUsers from "../Hooks/useUsers";
+import { PiStarOfDavid } from "react-icons/pi";
+import useAuth from "../Hooks/useAuth";
 
 
 const DrawerDashboard = () => {
 
+    const { user } = useAuth();
     const [isAdmin] = useAdmin();
     const [isSurveyor] = useSurveyor();
+    const [allUsers] = useUsers();
+    const proUser = allUsers?.some(singleUser => singleUser?.role === 'Pro User' && singleUser?.email === user.email);
 
     return (
         <div className="border mt-5 ">
@@ -28,7 +34,7 @@ const DrawerDashboard = () => {
                         loop={0}
                         typeSpeed={75}
                         words={[
-                            'ADMIN',
+                            'USER',
                             'DASHBOARD',
                         ]}
                     /></h2>
@@ -45,6 +51,13 @@ const DrawerDashboard = () => {
                             <RiContactsLine className="text-2xl text-blue-800"></RiContactsLine>
                             <p>Contact</p>
                         </NavLink></li>
+                        {
+                            !proUser &&
+                            <li className="py-2"><NavLink className={'flex gap-2 items-center'} to='/payment'>
+                                <PiStarOfDavid className="text-2xl text-blue-800"></PiStarOfDavid>
+                                <p>Pro User</p>
+                            </NavLink></li>
+                        }
                     </ul>
                 </>
             }

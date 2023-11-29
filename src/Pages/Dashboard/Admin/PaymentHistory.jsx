@@ -57,8 +57,7 @@ const PaymentHistory = () => {
                                     <th className="text-center text-2xl font-semibold">
                                         {proUser.payment}
                                     </th>
-                                    <th className="text-base">
-                                        {/* {proUser.date} */}
+                                    <th className="text-lg">
                                         {moment(proUser.date).format('LL')}
                                     </th>
                                 </tr>
