@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const axiosPublic = axios.create({
-    baseURL: 'http://localhost:5066',
+    baseURL: 'https://survey-app-assignment-shimul.web.app',
 })
 
 const useAxiosPublic = () => {
