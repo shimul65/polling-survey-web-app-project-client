@@ -3,10 +3,11 @@ import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
 import useAuth from "../../../Hooks/useAuth";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import MySurvey from "../../../Components/MySurvey/MySurvey";
+import useScrollToTop from "../../../Hooks/useScrollToTop";
 
 
 const SurveyorHome = () => {
-
+    useScrollToTop();
     const { user } = useAuth();
     const axiosSecure = useAxiosSecure();
     const { data: mySurveys, refetch } = useQuery({

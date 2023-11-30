@@ -7,12 +7,13 @@ import { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import useAuth from "../../../Hooks/useAuth";
+import useScrollToTop from "../../../Hooks/useScrollToTop";
 
 const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY
 const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
 
 const CreateSurvey = () => {
-
+    useScrollToTop();
     const { user } = useAuth();
     const axiosPublic = useAxiosPublic();
     const axiosSecure = useAxiosSecure();

@@ -13,11 +13,13 @@ import { CiLocationOn, CiTimer } from "react-icons/ci";
 import { BsTelephone, BsCheckSquare } from "react-icons/bs";
 import Trusted from "../Home/Trusted";
 import 'animate.css';
+import useScrollToTop from "../../Hooks/useScrollToTop";
 
 const Contact = () => {
+    useScrollToTop();
     return (
         <div className="w-full relative">
-            <div id="slide1" className="carousel-item border border-black-700 hero relative w-full md:h-[600px]"
+            <div id="slide1" className=" border border-black-700 hero relative w-full md:h-[600px]"
                 style={{ backgroundImage: `url(${banner})`, backgroundSize: '100% 100%' }}>
                 <div className="hero-overlay bg-opacity-60"></div>
                 <div className="">

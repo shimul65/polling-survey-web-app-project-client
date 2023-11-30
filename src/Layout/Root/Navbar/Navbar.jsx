@@ -66,6 +66,10 @@ const Navbar = () => {
             <IoHomeOutline className="text-2xl text-blue-800"></IoHomeOutline>
             <p>Home</p>
         </NavLink></li>
+        <li className="py-2"><NavLink className={'flex gap-2 items-center'} to='/surveys'>
+            <MdOutlineContacts className="text-2xl text-blue-800"></MdOutlineContacts>
+            <p>Surveys</p>
+        </NavLink></li>
         <li className="py-2"><NavLink className={'flex gap-2 items-center'} to='/about'>
             <MdOutlineContacts className="text-2xl text-blue-800"></MdOutlineContacts>
             <p>About US</p>

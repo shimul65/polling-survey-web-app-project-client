@@ -18,6 +18,8 @@ import CreateSurvey from "../Pages/Dashboard/Survyeor/CreateSurvey";
 import UpdateSurvey from "../Pages/Dashboard/Survyeor/UpdateSurvey";
 import AdminRoute from "./AdminRoute";
 import SurveyRequest from "../Pages/Dashboard/Admin/SurveyRequest";
+import PublishesSurvey from "../Pages/PublishesSurvey/PublishesSurvey";
+import SurveyDetails from "../Pages/Home/SurveyDetails";
 // import ManageUser from "../Pages/Dashboard/Admin/ManageUser";
 
 const router = createBrowserRouter([
@@ -37,6 +39,15 @@ const router = createBrowserRouter([
             {
                 path: "/contact",
                 element: <Contact></Contact>
+            },
+            {
+                path: "/surveys",
+                element: <PublishesSurvey></PublishesSurvey>
+            },
+            {
+                path: "/surveyDetails/:id",
+                element: <SurveyDetails></SurveyDetails>,
+                loader: ({ params }) => fetch(`https://polling-survey-assignment-server.vercel.app/publishedSurveys/${params?.id}`)
             },
             {
                 path: "/payment",
@@ -83,7 +94,7 @@ const router = createBrowserRouter([
             {
                 path: "/dashboard/updateSurvey/:id",
                 element: <UpdateSurvey></UpdateSurvey>,
-                loader: ({ params }) => fetch(`http://localhost:5066/surveys/${params?.id}`)
+                loader: ({ params }) => fetch(`https://polling-survey-assignment-server.vercel.app/surveys/${params?.id}`)
             },
 
 

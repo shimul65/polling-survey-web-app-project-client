@@ -2,9 +2,10 @@ import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import MySurvey from "../../../Components/MySurvey/MySurvey";
 import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
+import useScrollToTop from "../../../Hooks/useScrollToTop";
 
 const SurveyRequest = () => {
-
+    useScrollToTop();
     const axiosSecure = useAxiosSecure();
     const { data: mySurveys, refetch } = useQuery({
         queryKey: ['surveys'],

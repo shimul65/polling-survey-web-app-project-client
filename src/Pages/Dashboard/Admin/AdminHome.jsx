@@ -3,10 +3,11 @@ import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import useUsers from "../../../Hooks/useUsers";
 import { useEffect, useState } from "react";
+import useScrollToTop from "../../../Hooks/useScrollToTop";
 
 
 const AdminHome = () => {
-
+    useScrollToTop();
     const [allUsers, , , , refetch] = useUsers();
     const [filterUsers, setFilterUser] = useState(allUsers);
 

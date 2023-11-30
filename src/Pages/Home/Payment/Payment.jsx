@@ -2,12 +2,12 @@ import { loadStripe } from "@stripe/stripe-js";
 import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
 import { Elements } from "@stripe/react-stripe-js";
 import CheckOutForm from "./CheckOutForm";
+import useScrollToTop from "../../../Hooks/useScrollToTop";
 
 const stripePromise = loadStripe(import.meta.env.VITE_PAYMENT_GATEWAY_PK)
 
 const Payment = () => {
-
-
+    useScrollToTop();
     return (
         <div className="pt-[7%]">
             <SectionTitle heading={"Pay for Become Pro User"} ></SectionTitle>

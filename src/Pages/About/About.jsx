@@ -8,9 +8,11 @@ import img3 from '../../assets/about/million.png'
 import img4 from '../../assets/about/million2.png'
 import img5 from '../../assets/about/crm-watchlist-banner.webp'
 import Testimonial from "../Home/Testimonial";
+import useScrollToTop from "../../Hooks/useScrollToTop";
 
 
 const About = () => {
+    useScrollToTop();
     return (
         <>
             <div className="relative hero text-white">

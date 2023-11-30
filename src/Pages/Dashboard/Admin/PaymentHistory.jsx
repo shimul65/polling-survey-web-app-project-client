@@ -3,10 +3,11 @@ import useAuth from "../../../Hooks/useAuth";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
 import moment from "moment/moment";
+import useScrollToTop from "../../../Hooks/useScrollToTop";
 
 
 const PaymentHistory = () => {
-
+    useScrollToTop();
     const { user } = useAuth();
     const axiosSecure = useAxiosSecure();
 

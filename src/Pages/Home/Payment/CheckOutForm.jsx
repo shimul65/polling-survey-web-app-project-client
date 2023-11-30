@@ -4,9 +4,10 @@ import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import useAuth from "../../../Hooks/useAuth";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import useScrollToTop from "../../../Hooks/useScrollToTop";
 
 const CheckOutForm = () => {
-
+    useScrollToTop();
     const stripe = useStripe();
     const elements = useElements();
 
