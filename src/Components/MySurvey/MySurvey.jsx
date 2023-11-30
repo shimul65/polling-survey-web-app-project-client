@@ -87,7 +87,7 @@ const MySurvey = ({ survey, refetch }) => {
 
         <div className='flex flex-col lg:flex-row mx-3 md:mx-0 gap-6 rounded-lg border-0 md:border items-center'>
             <div className='h-full  flex-1'>
-                <img className=' w-full lg:w-[95%] h-full object-cover' src={image} alt="" />
+                <img className=' w-full lg:w-[95%] h-[300px] lg:h-full object-cover' src={image} alt="" />
             </div>
             <div className='pr-6 py-2  pl-6 lg:pl-0 space-y-4 my-3 lg:my-0  flex-1 '>
                 <div className='flex justify-between gap-3'>

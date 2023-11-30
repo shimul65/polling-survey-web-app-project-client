@@ -25,14 +25,14 @@ const PaymentHistory = () => {
                 <SectionTitle heading={'PRO USERS PAYMENTS'} ></SectionTitle>
             </div>
             <div className="uppercase flex justify-around font-semibold my-16">
-                <h2 className="text-5xl" style={{
+                <h2 className="text-3xl lg:text-5xl" style={{
                     fontFamily: 'Inter'
                 }}>Total Pro Users: {payments?.length}</h2>
             </div>
-            <div className="overflow-x-auto mx-[5%]">
+            <div className="overflow-x-auto mx-[5%] mb-16 lg::mb-0">
                 <table className="table">
                     {/* head */}
-                    <thead className="bg-gradient-to-b from-sky-300 to-blue-100 text-blue-700 font-semibold text-xl">
+                    <thead className="bg-gradient-to-b from-sky-300 to-blue-100 text-blue-700 font-semibold text-base md:text-xl">
                         <tr>
                             <th className="rounded-tl-2xl">
                             </th>
@@ -46,19 +46,19 @@ const PaymentHistory = () => {
                         {
                             payments?.map((proUser, index) =>
                                 <tr key={proUser._id}>
-                                    <th className="text-center text-2xl">
+                                    <th className="text-center text-base md:text-2xl">
                                         {index + 1}
                                     </th>
                                     <td>
-                                        <div className="font-bold text-lg">{proUser.name}</div>
-                                        <div className="text-lg font-semibold">{proUser.email}</div>
+                                        <div className="font-bold text-base md:text-lg">{proUser.name}</div>
+                                        <div className="text-base md:text-lg font-semibold">{proUser.email}</div>
                                     </td>
-                                    <th className="text-lg">{proUser.transactionId
+                                    <th className="text-base md:text-lg">{proUser.transactionId
                                     }</th>
-                                    <th className="text-center text-2xl font-semibold">
+                                    <th className="text-center text-base md:text-2xl font-semibold">
                                         {proUser.payment}
                                     </th>
-                                    <th className="text-lg">
+                                    <th className="text-base md:text-lg">
                                         {moment(proUser.date).format('LL')}
                                     </th>
                                 </tr>

@@ -86,10 +86,10 @@ const AllSurvey = ({ survey }) => {
 
         <div className='flex flex-col mx-3 md:mx-0 gap-6 rounded-lg border-0 md:border items-center'>
             <div className='w-full border'>
-                <img className='w-full h-[450px]' src={image} alt="" />
+                <img className='w-full lg:h-[450px]' src={image} alt="" />
             </div>
             <div className='pb-6 pt-3 px-[5%] space-y-4 my-3 lg:my-0 flex flex-col h-full'>
-                <div className='flex justify-between '>
+                <div className='flex flex-col md:flex-row justify-between '>
                     <p className="flex-1 text-lg font-semibold text-blue-700">{title}</p>
                     <p>Created At: <br />
                         {moment(timestamp).format('LL')}</p>

@@ -16,9 +16,9 @@ const Faq = () => {
                             {({ open }) => (
                                 <>
                                     <Disclosure.Button className="flex w-full justify-between rounded-lg px-4 py-3 text-left text-sm font-medium text-blue-800 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75" style={{ background: 'linear-gradient(360deg, #8cdcf9, #EBF4FF)' }}>
-                                        <span className="text-3xl font-semibold">1. How do I create a new survey?</span>
-                                        <IoIosArrowUp className={`${open ? 'rotate-180 transform text-3xl font-semibold' : ''
-                                            }  text-blue-800 text-3xl font-semibold`}></IoIosArrowUp>
+                                        <span className="text-xl md:text-2xl lg:text-3xl font-semibold">1. How do I create a new survey?</span>
+                                        <IoIosArrowUp className={`${open ? 'rotate-180 transform text-xl md:text-2xl lg:text-3xl font-semibold' : ''
+                                            }  text-blue-800 text-xl md:text-2xl lg:text-3xl font-semibold`}></IoIosArrowUp>
                                     </Disclosure.Button>
                                     <Transition
                                         show={open}
@@ -40,9 +40,9 @@ const Faq = () => {
                             {({ open }) => (
                                 <>
                                     <Disclosure.Button className="flex w-full justify-between rounded-lg px-4 py-3 text-left text-sm font-medium text-blue-800 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75" style={{ background: 'linear-gradient(360deg, #8cdcf9, #EBF4FF)' }}>
-                                        <span className="text-3xl font-semibold">2. What question types are available?</span>
-                                        <IoIosArrowUp className={`${open ? 'rotate-180 transform text-3xl font-semibold' : ''
-                                            }  text-blue-800 text-3xl font-semibold`}></IoIosArrowUp>
+                                        <span className="text-xl md:text-2xl lg:text-3xl font-semibold">2. What question types are available?</span>
+                                        <IoIosArrowUp className={`${open ? 'rotate-180 transform text-xl md:text-2xl lg:text-3xl font-semibold' : ''
+                                            }  text-blue-800 text-xl md:text-2xl lg:text-3xl font-semibold`}></IoIosArrowUp>
                                     </Disclosure.Button>
                                     <Transition
                                         show={open}
@@ -64,9 +64,9 @@ const Faq = () => {
                             {({ open }) => (
                                 <>
                                     <Disclosure.Button className="flex w-full justify-between rounded-lg px-4 py-3 text-left text-sm font-medium text-blue-800 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75" style={{ background: 'linear-gradient(360deg, #8cdcf9, #EBF4FF)' }}>
-                                        <span className="text-3xl font-semibold">3. Can I share surveys on social media?</span>
-                                        <IoIosArrowUp className={`${open ? 'rotate-180 transform text-3xl font-semibold' : ''
-                                            }  text-blue-800 text-3xl font-semibold`}></IoIosArrowUp>
+                                        <span className="text-xl md:text-2xl lg:text-3xl font-semibold">3. Can I share surveys on social media?</span>
+                                        <IoIosArrowUp className={`${open ? 'rotate-180 transform text-xl md:text-2xl lg:text-3xl font-semibold' : ''
+                                            }  text-blue-800 text-xl md:text-2xl lg:text-3xl font-semibold`}></IoIosArrowUp>
                                     </Disclosure.Button>
                                     <Transition
                                         show={open}
@@ -89,9 +89,9 @@ const Faq = () => {
                             {({ open }) => (
                                 <>
                                     <Disclosure.Button className="flex w-full justify-between rounded-lg px-4 py-3 text-left text-sm font-medium text-blue-800 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75" style={{ background: 'linear-gradient(360deg, #8cdcf9, #EBF4FF)' }}>
-                                        <span className="text-3xl font-semibold">5. Are there analytics to track survey responses?</span>
-                                        <IoIosArrowUp className={`${open ? 'rotate-180 transform text-3xl font-semibold' : ''
-                                            }  text-blue-800 text-3xl font-semibold`}></IoIosArrowUp>
+                                        <span className="text-xl md:text-2xl lg:text-3xl font-semibold">5. Are there analytics to track survey responses?</span>
+                                        <IoIosArrowUp className={`${open ? 'rotate-180 transform text-xl md:text-2xl lg:text-3xl font-semibold' : ''
+                                            }  text-blue-800 text-xl md:text-2xl lg:text-3xl font-semibold`}></IoIosArrowUp>
                                     </Disclosure.Button>
                                     <Transition
                                         show={open}
@@ -113,9 +113,9 @@ const Faq = () => {
                             {({ open }) => (
                                 <>
                                     <Disclosure.Button className="flex w-full justify-between rounded-lg px-4 py-3 text-left text-sm font-medium text-blue-800 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75" style={{ background: 'linear-gradient(360deg, #8cdcf9, #EBF4FF)' }}>
-                                        <span className="text-3xl font-semibold">4. Can I collaborate with others on survey creation?</span>
-                                        <IoIosArrowUp className={`${open ? 'rotate-180 transform text-3xl font-semibold' : ''
-                                            }  text-blue-800 text-3xl font-semibold`}></IoIosArrowUp>
+                                        <span className="text-xl md:text-2xl lg:text-3xl font-semibold">4. Can I collaborate with others on survey creation?</span>
+                                        <IoIosArrowUp className={`${open ? 'rotate-180 transform text-xl md:text-2xl lg:text-3xl font-semibold' : ''
+                                            }  text-blue-800 text-xl md:text-2xl lg:text-3xl font-semibold`}></IoIosArrowUp>
                                     </Disclosure.Button>
                                     <Transition
                                         show={open}

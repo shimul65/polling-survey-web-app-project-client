@@ -22,7 +22,7 @@ const Contact = () => {
             <div id="slide1" className=" border border-black-700 hero relative w-full md:h-[600px]"
                 style={{ backgroundImage: `url(${banner})`, backgroundSize: '100% 100%' }}>
                 <div className="hero-overlay bg-opacity-60"></div>
-                <div className="">
+                <div className="mt-28 md:mt-20 lg:mt-0 mb-16 lg:mb-0">
                     <div className="flex flex-col items-center space-y-7 lg:mb-0">
                         <h2 className="text-3xl md:text-7xl font-extrabold text-center text-white"><span className='linear-style'>Looking for something</span>
                             <br />
@@ -146,7 +146,7 @@ const Contact = () => {
                 <div className="my-16">
                     <SectionTitle heading={'Our offices around the world'}></SectionTitle>
                 </div>
-                <p className="text-center mb-10 text-lg">Connect with one of our global offices...  <br />
+                <p className="text-center mx-10 md:mx-0 mb-10 text-lg">Connect with one of our global offices...  <br />
                     or feel free to just send us a nifty postcard. We won&#39;t mind!</p>
                 <div className="container mx-auto">
                     <div className="grid grid-cols-1 gap-6 md:grid-cols-3 my-14 mx-2">
@@ -330,7 +330,7 @@ const Contact = () => {
                     </div>
                 </div>
             </div>
-            <div>
+            <div className="overflow-hidden">
                 <Trusted></Trusted>
             </div>
 

@@ -33,7 +33,7 @@ const HowWorks = () => {
                         </video>
                     </div>
                 </div>
-                <div className='flex flex-col-reverse md:flex-row items-center gap-5 md:gap-0  mx-3 md:mx-0 mt-6 md:mt-0'>
+                <div className='flex flex-col-reverse md:flex-row items-center gap-5 md:gap-0  mx-3 md:mx-0 mt-6 mb-5 lg:mb-0 md:mt-0'>
                     <div className="flex-1  space-y-10 " >
                         <h2 className="text-2xl text-center  lg:text-5xl font-bold">
                             Seamless Survey <br /> <span className='linear-style2'>Distribution</span>

@@ -16,7 +16,7 @@ const PublishesSurvey = () => {
             <div className=" border border-black-700 hero relative w-full md:h-[600px]"
                 style={{ backgroundImage: `url(${banner2})`, backgroundSize: '100% 100%' }}>
                 <div className="hero-overlay bg-opacity-60"></div>
-                <div className="">
+                <div className="mt-28 md:mt-24 lg:mt-0 mb-14 lg:mb-0">
                     <div className="flex flex-col items-center space-y-7 lg:mb-0">
                         <h2 className="text-3xl md:text-7xl font-extrabold text-center text-white"><span className='linear-style'>Shape Our Future</span>
                             <br />

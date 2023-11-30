@@ -64,7 +64,7 @@ const CreateSurvey = () => {
             </div>
             <div className="mx-[5%] border p-12 bg-white mt-16">
                 <form onSubmit={handleSubmit(onSubmit)}>
-                    <div className="flex gap-6">
+                    <div className="flex flex-col md:flex-row gap-6">
                         <div className="form-control w-full">
                             <label className="label">
                                 <span className="label-text text-blue-800 text-base">Survey Title*</span>
@@ -111,16 +111,16 @@ const CreateSurvey = () => {
                         <label className="label">
                             <span className="label-text text-blue-800 text-base">Survey Questions</span>
                         </label>
-                        <textarea {...register('question')} className="textarea textarea-bordered h-52 border-sky-400" placeholder="Survey Questions Type Here ... (Yes/No)"></textarea>
+                        <textarea {...register('question')} className="textarea textarea-bordered h-32 border-sky-400" placeholder="Survey Questions Type Here ... (Yes/No)"></textarea>
                     </div>
 
                     <div className="form-control w-full my-6">
                         <input {...register('image', { required: true })} type="file" className="file-input input-info max-w-xs" />
                     </div>
 
-                    <div className="form-control my-6">
+                    <div className="form-control w-full md:w-1/2 my-6">
                         <button >
-                            <div className="btn-epic shadow-md shadow-sky-300 " style={{ height: '50px', width: '25%' }}>
+                            <div className="btn-epic mx-auto md:mx-0 shadow-md shadow-sky-300 " style={{ height: '50px', width: '50%' }}>
                                 <div>
                                     <span style={{ left: '0' }}>Add Survey</span><span style={{ left: '0' }}>Add Survey</span>
                                 </div>

@@ -21,7 +21,7 @@ const MostVotedSurvey = () => {
                 <SectionTitle heading={'MOST VOTED SURVEY'}></SectionTitle>
             </div>
             <div className="my-16">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mx-0 md:mx-4 lg:mx-2">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-0 md:mx-4 lg:mx-2">
                     {
                         sortedSurveys?.slice(0, 6).map(survey => <AllSurvey key={survey._id} survey={survey} refetch={refetch}></AllSurvey>)
                     }

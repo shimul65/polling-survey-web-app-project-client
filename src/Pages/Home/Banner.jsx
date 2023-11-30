@@ -5,7 +5,7 @@ const Banner = () => {
             <div id="slide1" className="carousel-item border border-black-700 hero relative w-full md:h-[700px]"
                 style={{ backgroundImage: `url(${banner})`, backgroundSize: '100% 100%' }}>
                 <div className="hero-overlay bg-opacity-60"></div>
-                <div className="">
+                <div className="mt-24 mb-12 md:mt-0 md:mb-0">
                     <div className="flex flex-col items-center space-y-7 lg:mb-20">
                         <h2 className="text-3xl md:text-7xl font-extrabold text-center text-white"><span className='linear-style'>Experience the craft </span>
                             <br />

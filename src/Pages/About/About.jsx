@@ -19,17 +19,17 @@ const About = () => {
                 <div className="hero-overlay bg-opacity-80"></div>
                 <video
                     id="backgroundVideo"
-                    className="border"
+                    className="border hidden md:block"
                     controls autoPlay preload='auto' loop muted
                 >
                     <source src={video3} type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
-                <div className="">
+                <div className="mt-28 lg:mt-0 mb-14 md:pb-10 lg:pb-0 lg:mb-0">
                     <div className="flex flex-col items-center space-y-7 lg:mb-20">
-                        <h2 className="text-3xl md:text-7xl font-extrabold text-center text-white"><span className='linear-style'>Crafting the Survey</span>
+                        <h2 className="text-3xl md:text-5xl lg:text-7xl font-extrabold text-center text-white"><span className='linear-style'>Crafting the Survey</span>
                             <br />
-                            <span className='md:text-6xl linear-style2'>Experience with Expertise.</span>
+                            <span className=' md:text-4xl lg:text-6xl linear-style2'>Experience with Expertise.</span>
                         </h2>
                         <p className="text-sm px-16 md:px-0 md:text-xl font-medium text-white text-center">For more than 25 years, we&rsquo;ve been bucking Silicon Valley <br />trends, taking our own approach to building products.</p>
                         <div className="btn-epic shadow-md shadow-sky-300 " style={{ height: '50px', }}>
@@ -45,11 +45,11 @@ const About = () => {
                 <SectionTitle heading={"ABOUT US"} ></SectionTitle>
                 </div>
                 <div>
-                    <p className="text-4xl font-semibold text-justify mx-[14%]">Good software is a work of art, and good art takes time. Our teams spend years mastering their craft in order to deliver exceptional products that customers love. Software isn&#39;t just our paycheck:</p>
+                    <p className="text-xl md:text-4xl font-semibold text-justify mx-[14%]">Good software is a work of art, and good art takes time. Our teams spend years mastering their craft in order to deliver exceptional products that customers love. Software isn&#39;t just our paycheck:</p>
                 </div>
                 <div className="my-16">
-                    <h2 className="mt-5 ml-[33%] text-4xl md:text-7xl font-bold">
-                        It&rsquo;s Our <span className=" text-4xl md:text-8xl text-[#05bcff] text-center">
+                    <h2 className="mt-5 ml-[15%] lg:ml-[33%] text-4xl md:text-5xl lg:text-7xl font-bold">
+                        It&rsquo;s Our <span className="text-4xl md:text-5xl lg:text-8xl text-[#05bcff] text-center">
                             <Typewriter
                                 cursor
                                 cursorStyle='|'
@@ -66,13 +66,13 @@ const About = () => {
                         </span>
                     </h2>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-4  gap-5 px-2">
+                <div className="grid grid-cols-1 lg:grid-cols-4 items-center justify-center justify-items-center  gap-5 px-2">
                     {/* left side */}
                     <div className="col-span-3 space-y-6">
                         <div className='border px-5 py-6 rounded-lg'>
                             <h2 className='text-3xl font-bold md:w-3/4 mb-5'>A company you will keep</h2>
                             <div className="">
-                                <img className=' w-full h-[600px] object-cover rounded-lg' src={img1} alt="" />
+                                <img className=' w-full h-[300px] lg:h-[600px] object-cover rounded-lg' src={img1} alt="" />
                                 <p className='mt-6 text-justify text-lg'>Software should solve more problems than it causes, so we don&rsquo;t lock you into multi-year contracts with fixed price increases. We don&rsquo;t push our salespeople to push you.
 
                                     Our products are available à la carte or as suites, and we offer flexible payment options to fit every budget. Our prices are as transparent as our privacy policy, and we take pride in both.
@@ -83,7 +83,7 @@ const About = () => {
                         <div className='border px-5 py-6 rounded-lg'>
                             <h2 className='text-3xl font-bold md:w-3/4 mb-5'>A private company with a public vision</h2>
                             <div className="">
-                                <img className=' w-full h-[600px] object-cover rounded-lg' src={img2} alt="" />
+                                <img className=' w-full h-[300px] lg:h-[600px] object-cover rounded-lg' src={img2} alt="" />
                                 <p className='mt-6 text-justify text-lg'>Since we have never taken money from investors, we have always been able to focus on what is best for the customer. Rather than worrying about short-term profits, we&rsquo;ve had the freedom to think for the long term.
                                     This kind of independence changes how we approach problem-solving, empowering us to truly think differently.
                                     From how we build to how we hire, our unconventional approach has brought us to more than 15,000 employees and 100 million users around the world.
@@ -94,14 +94,14 @@ const About = () => {
                     </div>
 
                     {/* right side */}
-                    <div className="flex flex-col gap-5">
+                    <div className="grid grid-cols-1 justify-items-center gap-5 ">
                         <div className='border px-5 py-3 rounded-lg bg-[#fff7f0]'>
-                            <img className='w-full' src={img4} alt="" />
+                            <img className='md:w-1/2 w-full mx-auto lg:mx-0 lg:w-full' src={img4} alt="" />
                             <h2 className='text-xl font-bold my-5 mb-5'>Celebrating 1 million installations of Marketplace extensions. With a thriving ecosystem of 500+ partners who&#39;ve worked alongside us, we enabled 800,000+ users to do more with Zoho.</h2>
                             <p></p>
                         </div>
                         <div className='border px-5 py-3 rounded-lg bg-[#fff7f0]'>
-                            <img className='w-full' src={img3} alt="" />
+                            <img className='md:w-1/2 w-full mx-auto lg:mx-0 lg:w-full' src={img3} alt="" />
                             <h2 className='text-xl font-bold my-5 mb-5'>
                                 Marking the milestone of reaching 100 million+ users! Your trust in us made this possible, and we couldn&#39;t be more grateful. We believe this is the beginning of a new forever. Thank you for being a part of our journey.
 
@@ -109,13 +109,13 @@ const About = () => {
                             <p></p>
                         </div>
                         <div className='border px-5 py-3 rounded-lg bg-[#fff7f0]'>
-                            <img className='w-full' src={img5} alt="" />
+                            <img className='md:w-1/2 mx-auto w-full lg:mx-0 lg:w-full' src={img5} alt="" />
                             <h2 className='text-xl font-bold my-5 mb-5'>CRM Watch list</h2>
                             <p className="font-semibold">Zoho CRM wins the CRM Watch list Award with distinction and the highest overall score among strong competitors like Salesforce, Oracle, SAP, and more.</p>
                         </div>
                     </div>
                 </div>
-                <div>
+                <div className="overflow-hidden">
                     <Testimonial></Testimonial>
                 </div>
             </div>

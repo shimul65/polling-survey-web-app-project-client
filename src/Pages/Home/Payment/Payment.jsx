@@ -9,7 +9,7 @@ const stripePromise = loadStripe(import.meta.env.VITE_PAYMENT_GATEWAY_PK)
 const Payment = () => {
     useScrollToTop();
     return (
-        <div className="pt-[7%]">
+        <div className="pt-[20%] lg:pt-[7%]">
             <SectionTitle heading={"Pay for Become Pro User"} ></SectionTitle>
             <div className="text-center my-10">
                 <h2 className="text-4xl font-bold text-red-700">$ 100</h2>

@@ -11,9 +11,13 @@ const Home = () => {
             <Banner></Banner>
             <HowWorks></HowWorks>
             <MostVotedSurvey></MostVotedSurvey>
-            <Testimonial></Testimonial>
+            <div className="overflow-hidden">
+                <Testimonial></Testimonial>
+            </div>
             <Faq></Faq>
-            <Trusted></Trusted>
+            <div className="overflow-hidden">
+                <Trusted></Trusted>
+            </div>
         </div>
     );
 };
