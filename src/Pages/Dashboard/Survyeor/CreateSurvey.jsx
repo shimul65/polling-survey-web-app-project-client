@@ -38,6 +38,7 @@ const CreateSurvey = () => {
                 image: res.data.data.display_url,
                 category: data.category,
                 deadline: startDate,
+                status: 'pending'
             }
             axiosSecure.post('/surveys', surveyInfo)
                 .then(res => {
@@ -74,7 +75,7 @@ const CreateSurvey = () => {
                                 required
                                 className="input input-info" />
                         </div>
-                        
+
                         <div className="form-control w-full">
                             <label className="label">
                                 <span className="label-text text-blue-800 text-base">Survey Category*</span>
@@ -104,7 +105,7 @@ const CreateSurvey = () => {
                             onChange={(date) => setStartDate(date)}
                         />
                     </div>
-                    
+
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text text-blue-800 text-base">Survey Questions</span>

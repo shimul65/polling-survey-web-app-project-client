@@ -1,18 +1,15 @@
 import { useQuery } from "@tanstack/react-query";
-import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
-import useAuth from "../../../Hooks/useAuth";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import MySurvey from "../../../Components/MySurvey/MySurvey";
+import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
 
+const SurveyRequest = () => {
 
-const SurveyorHome = () => {
-
-    const { user } = useAuth();
     const axiosSecure = useAxiosSecure();
     const { data: mySurveys, refetch } = useQuery({
-        queryKey: [user?.email, 'surveys'],
+        queryKey: ['surveys'],
         queryFn: async () => {
-            const res = await axiosSecure.get(`/surveys?email=${user.email}`);
+            const res = await axiosSecure.get(`/surveys`);
             return res.data;
         }
     })
@@ -20,7 +17,7 @@ const SurveyorHome = () => {
     return (
         <div className="mb-16">
             <div className="mt-16">
-                <SectionTitle heading={'ALL OF YOUR SURVEYS'} ></SectionTitle>
+                <SectionTitle heading={`SURVEYOR's SURVEY REQUEST`} ></SectionTitle>
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-6 mx-0 mt-16 md:mx-4 lg:mx-2'>
                 {
@@ -31,4 +28,4 @@ const SurveyorHome = () => {
     );
 };
 
-export default SurveyorHome;
+export default SurveyRequest;

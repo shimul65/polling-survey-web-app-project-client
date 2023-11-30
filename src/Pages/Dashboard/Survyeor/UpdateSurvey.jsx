@@ -40,6 +40,7 @@ const UpdateSurvey = () => {
                 image: res.data.data.display_url,
                 category: data.category,
                 deadline: startDate,
+                status: 'pending'
             }
             axiosSecure.patch(`/surveys/${_id}`, updateSurvey)
                 .then(res => {

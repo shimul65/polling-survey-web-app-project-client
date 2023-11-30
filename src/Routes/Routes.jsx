@@ -16,6 +16,8 @@ import PaymentHistory from "../Pages/Dashboard/Admin/PaymentHistory";
 import SurveyorHome from "../Pages/Dashboard/Survyeor/SurveyorHome";
 import CreateSurvey from "../Pages/Dashboard/Survyeor/CreateSurvey";
 import UpdateSurvey from "../Pages/Dashboard/Survyeor/UpdateSurvey";
+import AdminRoute from "./AdminRoute";
+import SurveyRequest from "../Pages/Dashboard/Admin/SurveyRequest";
 // import ManageUser from "../Pages/Dashboard/Admin/ManageUser";
 
 const router = createBrowserRouter([
@@ -58,11 +60,15 @@ const router = createBrowserRouter([
             // admin routes
             {
                 path: "/dashboard/adminHome",
-                element: <AdminHome></AdminHome>
+                element: <AdminRoute><AdminHome></AdminHome></AdminRoute>
             },
             {
                 path: "/dashboard/payments",
-                element: <PaymentHistory></PaymentHistory>
+                element: <AdminRoute><PaymentHistory></PaymentHistory></AdminRoute>
+            },
+            {
+                path: "/dashboard/surveyRequests",
+                element: <AdminRoute><SurveyRequest></SurveyRequest></AdminRoute>
             },
 
             // surveyor routes
