@@ -67,7 +67,7 @@ const CheckOutForm = () => {
         if (confirmError) {
             // console.log('[error in confirm payment]', confirmError);
         } else {
-            console.log('[PaymentIntent]', paymentIntent);
+            // console.log('[PaymentIntent]', paymentIntent);
             if (paymentIntent.status === 'succeeded') {
 
                 setTransactionId(paymentIntent.id);
@@ -79,7 +79,7 @@ const CheckOutForm = () => {
                     date: new Date(),
                 }
                 const res = await axiosSecure.post('/payments', payment)
-                // console.log('payment saved', res.data);
+                console.log('payment saved', res.data);
 
                 if (res.data?.insertedId) {
                     const updateStatus = { role: 'Pro User' }

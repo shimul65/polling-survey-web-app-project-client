@@ -4,8 +4,11 @@ import { Link } from "react-router-dom";
 // import useAxiosSecure from "../Hooks/useAxiosSecure";
 // import Swal from "sweetalert2";
 import { BiSolidDislike, BiSolidLike } from "react-icons/bi";
+import ScrollToTop from "./ScrollToTop/ScrollToTop";
 
 const AllSurvey = ({ survey }) => {
+
+    ScrollToTop();
 
     // const axiosSecure = useAxiosSecure();
     const { _id, title, question, image, category, deadline, timestamp, likeCount, dislikeCount, yesVote, noVote } = survey;
@@ -89,7 +92,7 @@ const AllSurvey = ({ survey }) => {
                 <img className='w-full lg:h-[450px]' src={image} alt="" />
             </div>
             <div className='pb-6 pt-3 px-[5%] space-y-4 my-3 lg:my-0 flex flex-col h-full'>
-                <div className='flex flex-col md:flex-row justify-between '>
+                <div className='flex flex-col md:flex-row justify-between md:items-center '>
                     <p className="flex-1 text-lg font-semibold text-blue-700">{title}</p>
                     <p>Created At: <br />
                         {moment(timestamp).format('LL')}</p>
@@ -118,7 +121,7 @@ const AllSurvey = ({ survey }) => {
                 <Link to={`/surveyDetails/${_id}`}>
                     <div className="btn-epic mt-5 shadow-md border shadow-sky-300" style={{ height: '50px', width: '40%' }}>
                         <div>
-                            <span style={{ left: '' }}>Details</span><span style={{ left: '' }}>Details</span>
+                            <span>Details</span><span>Details</span>
                         </div>
                     </div></Link>
             </div>

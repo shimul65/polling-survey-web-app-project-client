@@ -4,13 +4,17 @@ import useAdmin from "../../Hooks/useAdmin";
 import { MdOutlinePending, MdOutlineUnpublished, MdPublishedWithChanges } from "react-icons/md";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import Swal from "sweetalert2";
+import ScrollToTop from "../ScrollToTop/ScrollToTop";
 
 const MySurvey = ({ survey, refetch }) => {
+    ScrollToTop();
 
     const [isAdmin] = useAdmin();
     const axiosSecure = useAxiosSecure();
     const { _id, title, question, image, category, deadline, timestamp, email, status, unpublishedStatus } = survey;
 
+
+    //  published survey by admin
     const handlePublish = (id) => {
 
         const updateSurvey = {
@@ -37,6 +41,10 @@ const MySurvey = ({ survey, refetch }) => {
                         noVote: 0,
                         likeCount: 0,
                         dislikeCount: 0,
+                        yesVoteGiven: [],
+                        noVoteGiven: [],
+                        likeGiven: [],
+                        disLikeGiven: [],
                     }
                     axiosSecure.post(`/publishedSurveys`, publishedSurvey)
                         .then(res => {
@@ -55,8 +63,8 @@ const MySurvey = ({ survey, refetch }) => {
             })
     }
 
+    // unpublished survey by admin
     const handleUnpublished = (id) => {
-
         const updateSurvey = {
             title: title,
             question: question,
@@ -90,7 +98,7 @@ const MySurvey = ({ survey, refetch }) => {
                 <img className=' w-full lg:w-[95%] h-[300px] lg:h-full object-cover' src={image} alt="" />
             </div>
             <div className='pr-6 py-2  pl-6 lg:pl-0 space-y-4 my-3 lg:my-0  flex-1 '>
-                <div className='flex justify-between gap-3'>
+                <div className='flex justify-between md:items-center gap-3'>
                     <p className="flex-1 text-lg font-semibold text-blue-700">{title}</p>
                     <p>Created At: <br />
                         {moment(timestamp).format('LL')}</p>
