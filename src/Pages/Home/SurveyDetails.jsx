@@ -13,7 +13,9 @@ import toast from "react-hot-toast";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import Swal from "sweetalert2";
 import { RiCheckboxCircleFill } from "react-icons/ri";
+import { Cell, Legend, Pie, PieChart, ResponsiveContainer } from "recharts";
 
+const COLORS = ['#0088FE', 'purple'];
 
 const SurveyDetails = () => {
 
@@ -302,6 +304,26 @@ const SurveyDetails = () => {
     }
 
 
+    // pie chart
+    const RADIAN = Math.PI / 180;
+    const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent }) => {
+        const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
+        const x = cx + radius * Math.cos(-midAngle * RADIAN);
+        const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+        return (
+            <text x={x} y={y} fill="white" textAnchor={x > cx ? 'start' : 'end'} dominantBaseline="central">
+                {`${(percent * 100).toFixed(0)}%`}
+            </text>
+        );
+    };
+
+    const pieChartData = [
+        { name: 'YES VOTE', value: yesVote },
+        { name: 'NO VOTE', value: noVote },
+    ];
+
+
 
     return (
 
@@ -309,7 +331,7 @@ const SurveyDetails = () => {
             <div className=" border border-black-700 hero relative w-full md:h-[600px]"
                 style={{ backgroundImage: `url(${banner2})`, backgroundSize: '100% 100%' }}>
                 <div className="hero-overlay bg-opacity-60"></div>
-                <div className="">
+                <div className="mt-28 md:mt-8 mb-12 md:mb-6 lg:mt-0 lg:mb-0">
                     <div className="flex flex-col items-center space-y-7 lg:mb-0">
                         <h2 className="text-3xl md:text-7xl font-extrabold text-center text-white"><span className='linear-style'>Shape Our Future</span>
                             <br />
@@ -340,10 +362,10 @@ const SurveyDetails = () => {
                 <div className="mb-8 pt-8">
                     <SectionTitle heading={'SURVEY DETAILS'}></SectionTitle>
                 </div>
-                <div className="my-16 grid grid-cols-3">
+                <div className="my-16 grid grid-cols-1 lg:grid-cols-3">
 
                     {/* survey details */}
-                    <div className={`${isYesVoteGiven || isNoVoteGiven ? 'flex flex-col mx-3 md:mx-0 gap-6 rounded-lg border-0 md:border items-center col-span-2' : 'flex mx-3 md:mx-0 gap-6 rounded-lg border-0 md:border items-center col-span-3'}`}>
+                    <div className={`${isYesVoteGiven || isNoVoteGiven ? 'flex flex-col mx-3 md:mx-0 gap-6 rounded-lg border-0 md:border items-center lg:col-span-2' : 'flex mx-3 md:mx-0 gap-6 rounded-lg border-0 md:border items-center lg:col-span-3'}`}>
                         <div className='w-full border'>
                             <img className='w-full h-[450px]' src={image} alt="" />
                         </div>
@@ -419,8 +441,26 @@ const SurveyDetails = () => {
 
 
                     {/* chart */}
-                    <div className={`${!isYesVoteGiven && !isNoVoteGiven ? 'hidden' : ' border border-red-600'}`}>
-
+                    <div className={`${!isYesVoteGiven && !isNoVoteGiven ? 'hidden' : 'h-full lg:h-1/2'}`}>
+                        <ResponsiveContainer width="100%" height="100%">
+                            <PieChart width={400} height={400} className="">
+                                <Pie
+                                    data={pieChartData}
+                                    cx="50%"
+                                    cy="50%"
+                                    labelLine={false}
+                                    label={renderCustomizedLabel}
+                                    outerRadius={80}
+                                    fill="#8884d8"
+                                    dataKey="value"
+                                >
+                                    {pieChartData?.map((entry, index) => (
+                                        <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                                    ))}
+                                </Pie>
+                                <Legend ></Legend>
+                            </PieChart>
+                        </ResponsiveContainer>
                     </div>
                 </div>
             </div>
