@@ -60,12 +60,12 @@ const Login = () => {
             .catch(error => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
-                console.log(errorCode,errorMessage);
+                console.log(errorCode, errorMessage);
                 Swal.fire({
                     position: "top-end",
                     icon: "error",
-                    title:  
-                    `Please give correct mail & Password`,
+                    title:
+                        `Please give correct mail & Password`,
                     showConfirmButton: false,
                     timer: 2500
                 });
@@ -75,7 +75,7 @@ const Login = () => {
 
 
     return (
-        <div className="container mx-auto px-[] pt-[5%]">
+        <div  className="container mx-auto px-[] pt-[5%]">
             <div className="card-body mx-auto my-6 rounded-2xl py-8 px-10 text-black">
                 <form onSubmit={handleLogin} method="dialog" >
                     <h2 className=' text-4xl font-extrabold text-[#05bcff] text-center' style={{

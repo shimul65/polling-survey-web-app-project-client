@@ -8,7 +8,9 @@ const PrivateRoutes = ({ children }) => {
     const location = useLocation();
 
     if (loading) {
-        return <CircleLoader color="#36d7b7" className="mx-auto pt-[40%]" />
+        return <div className="mx-auto py-[30%]">
+            <CircleLoader color="#36d7b7"  className="mx-auto" />
+        </div>
     }
 
     if (user) {

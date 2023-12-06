@@ -37,9 +37,9 @@ const PaymentHistory = () => {
                             <th className="rounded-tl-2xl">
                             </th>
                             <th>NAME & EMAIL</th>
-                            <th className="w-[10%]">EMAIL</th>
+                            <th className="w-[10%] uppercase">Transaction ID</th>
                             <th className="text-center">PAYMENT</th>
-                            <th className="rounded-tr-2xl texce">DATE</th>
+                            <th className="rounded-tr-2xl">DATE</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -53,10 +53,10 @@ const PaymentHistory = () => {
                                         <div className="font-bold text-base md:text-lg">{proUser.name}</div>
                                         <div className="text-base md:text-lg font-semibold">{proUser.email}</div>
                                     </td>
-                                    <th className="text-base md:text-lg">{proUser.transactionId
+                                    <th className="text-base md:text-lg text-red-700">{proUser.transactionId
                                     }</th>
                                     <th className="text-center text-base md:text-2xl font-semibold">
-                                        {proUser.payment}
+                                       ${proUser.payment}
                                     </th>
                                     <th className="text-base md:text-lg">
                                         {moment(proUser.date).format('LL')}

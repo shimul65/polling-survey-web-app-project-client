@@ -14,6 +14,8 @@ import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import Swal from "sweetalert2";
 import { RiCheckboxCircleFill } from "react-icons/ri";
 import { Cell, Legend, Pie, PieChart, ResponsiveContainer } from "recharts";
+import { CircleLoader } from "react-spinners";
+
 
 const COLORS = ['#0088FE', 'purple'];
 
@@ -37,7 +39,9 @@ const SurveyDetails = () => {
     })
 
     if (isLoading) {
-        return <span className="loading loading-spinner text-primary flex mx-auto py-[20%]"></span>
+        return <div className=" flex mx-auto py-[30%]">
+            <CircleLoader color="#36d7b7" className="mx-auto" />
+        </div>
     }
 
     const { _id, title, question, image, category, deadline, timestamp, likeCount, dislikeCount, yesVote, noVote, yesVoteGiven, noVoteGiven, likeGiven, disLikeGiven } = survey;
@@ -365,7 +369,7 @@ const SurveyDetails = () => {
                 <div className="my-16 grid grid-cols-1 lg:grid-cols-3">
 
                     {/* survey details */}
-                    <div className={`${isYesVoteGiven || isNoVoteGiven ? 'flex flex-col mx-3 md:mx-0 gap-6 rounded-lg border-0 md:border items-center lg:col-span-2' : 'flex mx-3 md:mx-0 gap-6 rounded-lg border-0 md:border items-center lg:col-span-3'}`}>
+                    <div className={`${isYesVoteGiven || isNoVoteGiven ? 'flex flex-col mx-3 md:mx-0 gap-6 rounded-lg  items-center lg:col-span-2' : 'flex flex-col lg:flex-row mx-3 md:mx-0 gap-6 rounded-lg  items-center lg:col-span-3'}`}>
                         <div className='w-full border'>
                             <img className='w-full h-[450px]' src={image} alt="" />
                         </div>
@@ -426,7 +430,7 @@ const SurveyDetails = () => {
                                 <div className="flex text-3xl gap-6">
                                     {
                                         isLikeGiven ?
-                                            <p className="flex items-center gap-2"><BiSolidLike className="cursor-pointer" onClick={handleRemoveLike} /><span className="text-blue-600 font-semibold">{likeCount}</span></p>
+                                            <p className="flex items-center gap-2"><BiSolidLike className="cursor-pointer text-blue-500" onClick={handleRemoveLike} /><span className="text-blue-600 font-semibold">{likeCount}</span></p>
                                             : <p className="flex items-center gap-2"><BiLike className="cursor-pointer" onClick={handleGivenLike} /><span className="text-blue-600 font-semibold">{likeCount}</span></p>
                                     }
                                     {
