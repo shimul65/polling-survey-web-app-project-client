@@ -46,8 +46,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/surveyDetails/:id",
-                element: <SurveyDetails></SurveyDetails>,
-                // loader: ({ params }) => fetch(`http://localhost:5066/publishedSurveys/${params?.id}`)
+                element: <SurveyDetails></SurveyDetails>
             },
             {
                 path: "/payment",
@@ -94,7 +93,7 @@ const router = createBrowserRouter([
             {
                 path: "/dashboard/updateSurvey/:id",
                 element: <UpdateSurvey></UpdateSurvey>,
-                loader: ({ params }) => fetch(`http://localhost:5066/surveys/${params?.id}`)
+                loader: ({ params }) => fetch(`https://polling-survey-assignment-server.vercel.app/surveys/${params?.id}`)
             },
 
 

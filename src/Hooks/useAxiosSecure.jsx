@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import useAuth from "./useAuth";
 
 export const axiosSecure = axios.create({
-    baseURL: 'http://localhost:5066',
+    baseURL: 'https://polling-survey-assignment-server.vercel.app',
     withCredentials: true,
 })
 
